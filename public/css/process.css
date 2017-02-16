@@ -1,0 +1,145 @@
+/*body {
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    -khtml-user-select: none; 
+    user-select: none; 
+}*/
+.recom-success, .recom-process{
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2;
+}
+
+
+.recom-tip {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.recom-tip .recom-sucImg {
+    height: 60px;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../icon/success.png") 50% no-repeat;
+    background-size: 100%;
+}
+
+.recom-processImg {
+    height: 60px;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../icon/process.png") 50% no-repeat;
+    background-size: 100%;    
+}
+
+.recom-tip span {
+    font-size: 19px;
+    color: #333;
+    margin-top: 15px;
+    display: block;
+}
+
+.recom-tip p {
+    font-size: 15px;
+    color: #999;
+    margin-top: 12px;
+    display: block;
+    line-height: 1.2;
+}
+.share-content {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.share-content p {
+    font-size: 15px;
+    color: #999;
+    margin-top: 12px;
+    display: inline-block;
+    line-height: 1.2;
+    text-align: left;
+
+}
+
+.outer {
+    text-align: center;
+}
+.btn-next {
+    border: 0;
+    width: 90%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff!important;
+    display: inline-block;
+    text-align: center;
+    background-color: #118bfc;
+    color: #fff;
+    line-height: 1;
+    font-size: 19px;
+    margin-top: 12px;
+    border-radius: 6px;
+}
+
+.upload-img-name:focus {
+    border-color:#118bfc;
+}
+
+a,a:active,a:hover{outline:none;text-decoration:none}
+
+
+.a-upload {
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    margin-top:16px;
+}
+
+.a-upload .input-select-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+
+.upload-img-name {
+    margin-top: 6px;
+    font-size: 14px;
+    border:0;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    float: left;
+    margin-left: 5%;
+    border: 0;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    width: 90%;
+}
+
+.grey {
+    background-color: #999;
+}
+.a-submit {
+    position: relative;
+    line-height: 45px;
+}
+.submit-btn{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}

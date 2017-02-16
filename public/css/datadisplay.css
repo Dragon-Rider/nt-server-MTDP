@@ -1,0 +1,55 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+*:not(input,textarea) {
+    -webkit-touch-callout: none;
+    /*-webkit-user-select: none;*/
+}
+
+body{
+    font-family: Calibri, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Arial, SimSun, sans-serif;
+    font-size: 14px;
+    //长按 和 选择
+    -webkit-touch-callout: none;
+    /*-webkit-user-select: none;*/
+    -webkit-font-smoothing: antialiased;
+    text-justify: 100%;
+}
+
+button, input, select, textarea {
+    font-family: Calibri, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Arial, SimSun, sans-serif;
+    font-size: 100%;
+    outline: none;
+}
+textarea,input,a,i,div{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+textarea, input {
+    resize: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+.hide {
+    display: none !important;
+}
+
+
+
+table{border-left: 1px solid #666; border-bottom: 1px solid #666; width: 500px;}
+td{border-right:1px solid #666;border-top: 1px solid #666;}
