@@ -44,7 +44,7 @@ app.post('/postdata', function(req, res){
 
     connection.end();
     console.log(process.env);
-    res.redirect("/success");
+    //res.redirect("/success");
 });
 
 
