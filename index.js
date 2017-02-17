@@ -36,7 +36,7 @@ app.post('/postdata', function(req, res){
     alert(1)
 
     connection.query(insertSQL, function (err1, res1) {
-        alert(json.stringify(process.env));
+        alert(JSON.stringify(process.env));
         console.log(process.env);
         console.log(err1);
         console.log(res1);
