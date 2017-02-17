@@ -2,7 +2,6 @@ $(function() {
     var flag = false;  //用户是否点击提交按钮
 
     $('.J_submit').on('click', function() {
-
         if(!validateForm()) {
             return;
         }
