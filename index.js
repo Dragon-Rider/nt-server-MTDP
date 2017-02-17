@@ -19,7 +19,7 @@ app.get('/form', routes.form);
 app.get('/success', routes.success);
 app.get('/share', routes.share);
 
-
+console.log("test")
 //数据发送页面，跳转提交成功页面
 app.post('/postdata', function(req, res){
     var data = req.body;
