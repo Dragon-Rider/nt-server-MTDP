@@ -25,20 +25,20 @@ app.post('/postdata', function(req, res){
     var data = req.body;
     var connection = mysql.createConnection({
         host     : process.env.MYSQL_HOST,
-        port     : process.env.MYSQL_PORT,
+        port     : 3306,  //process.env.MYSQL_PORT
         user     : process.env.ACCESSKEY,
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
     });
-    var insertSQL = "INSERT INTO  `app_demorecommend`.`form` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "')";
+    var insertSQL = "INSERT INTO  `app_neitui100`.`neitui100` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "')";
 
     connection.connect();
 
     connection.query(insertSQL, function (err1, res1) {
         if (err1) {
 
-            res.send(process.env)
-            //res.send("信息上传失败，请重新填写信息");
+            //res.send(process.env)
+            res.send("信息上传失败，请重新填写信息");
             return;
         } 
     })
@@ -64,7 +64,7 @@ app.get('/mydatabase', function (req, res) {
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
     });
-    var selectSQL = "SELECT `name` ,  `interestGroupId` ,  `jobId` ,  `email` ,  `phone` FROM `form` WHERE 1";
+    var selectSQL = "SELECT `name` ,  `interestGroupId` ,  `jobId` ,  `email` ,  `phone` FROM `neitui100` WHERE 1";
 
     connection.query(selectSQL, function(err, rows) {
         if (err) {
@@ -89,7 +89,7 @@ app.get('/datadisplay', function (req, res) {
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
     });
-    var selectSQL = "SELECT * FROM `form` WHERE 1";
+    var selectSQL = "SELECT * FROM `neitui100` WHERE 1";
     
     connection.query(selectSQL, function(err, rows) {
         if (err) {
