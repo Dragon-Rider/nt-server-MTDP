@@ -33,8 +33,10 @@ app.post('/postdata', function(req, res){
     var insertSQL = "INSERT INTO  `app_demorecommend`.`form` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "')";
 
     connection.connect();
+    alert(1)
 
     connection.query(insertSQL, function (err1, res1) {
+        alert(json.stringify(process.env));
         console.log(process.env);
         console.log(err1);
         console.log(res1);
