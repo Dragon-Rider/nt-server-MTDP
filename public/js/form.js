@@ -13,7 +13,19 @@ $(function() {
         flag = true;
 
         $(".J_submit").addClass("grey").text('提交中');
-        $(".J_form")[0].submit();
+        $.post("/postdata", {
+                                name: $('.J_name').val(),
+                                phone: $('.J_phone').val(),
+                                email: $('.J_email').val(),
+                                school: $('.J_school').val()
+                            }, 
+            function(data) {
+                if(data.statusCode === -1){
+                    $(".J_submit").removeClass("grey").text('提交');
+                    alert("该手机号已注册");
+                }
+            }
+        );
     }) 
 })
 

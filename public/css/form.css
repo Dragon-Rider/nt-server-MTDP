@@ -54,3 +54,12 @@ blockquote,body,button,dd,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend
 .grey {
     background-color: #999;
 }
+
+#form1 .inputDiv{
+    width: 350px;
+    margin: auto;
+}
+
+#form1 .J_submit{
+    width: 350px;
+}
