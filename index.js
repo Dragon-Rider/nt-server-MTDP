@@ -36,7 +36,6 @@ app.post('/postdata', function(req, res){
 
     connection.query(insertSQL, function (err1, res1) {
         if (err1) {
-
             //res.send(process.env)
             res.send("信息上传失败，请重新填写信息");
             return;
@@ -45,7 +44,7 @@ app.post('/postdata', function(req, res){
 
     connection.end();
     
-    //res.redirect("/success");
+    res.redirect("/success");
 });
 
 
