@@ -32,10 +32,13 @@ app.post('/postdata', function(req, res){
     });
     var insertSQL = "INSERT INTO  `app_demorecommend`.`form` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "')";
 
-
     connection.connect();
 
     connection.query(insertSQL, function (err1, res1) {
+        console.log(process.env);
+        console.log(err1);
+        console.log(res1);
+        console.log(insertSQL);
         if (err1) {
             res.send("信息上传失败，请重新填写信息");
             return;
@@ -43,7 +46,7 @@ app.post('/postdata', function(req, res){
     })
 
     connection.end();
-    console.log(process.env);
+    
     //res.redirect("/success");
 });
 
