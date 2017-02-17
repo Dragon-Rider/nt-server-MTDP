@@ -23,6 +23,9 @@ $(function() {
                 if(data.statusCode === -1){
                     $(".J_submit").removeClass("grey").text('提交');
                     alert("该手机号已注册");
+                }else if(data.statusCode === -2){
+                    $(".J_submit").removeClass("grey").text('提交');
+                    alert("信息上传失败，请刷新页面重新填写信息");
                 }
             }
         );

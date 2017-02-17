@@ -28,10 +28,10 @@ app.post('/postdata', function(req, res){
             password : process.env.SECRETKEY,
             database : 'app_' + process.env.APPNAME
         });
-    var querySQL = "SELECT * FROM `app_neitui100` WHERE `phone` = " + param;
+    var querySQL = "SELECT * FROM `app_neitui100` WHERE `phone` = " + req.body.phone;
     connection.connect();
     connection.query(querySQL, function (err1, res1) {        
-        if (res1.length != 0) {
+        if (res1 && res1.length != 0) {
             //phone exist
             var resData = {};
             resData["statusCode"] = -1;
@@ -42,14 +42,18 @@ app.post('/postdata', function(req, res){
             var data = req.body;
             var insertSQL = "INSERT INTO  `app_neitui100`.`neitui100` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "')";
             connection.query(insertSQL, function (err1, res1) {
+                connection.end();
                 if (err1) {
                     //res.send(process.env)
-                    res.send("信息上传失败，请重新填写信息");
+                    var resData = {};
+                    resData["statusCode"] = -2;
+                    resData["data"] = "upload failed";
+                    res.send(resData);
                     return;
-                } 
-            });
-            connection.end();        
-            res.redirect("/success");
+                } else{ 
+                    res.redirect("/success");
+                }
+            });           
         }
     });
     /*
