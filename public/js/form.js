@@ -19,7 +19,6 @@ $(function() {
         if(requestSending){
             return ;
         }
-        console.log()
         var postdata = {
             name: $('.J_name').val(),
             phone: $('.J_phone').val(),

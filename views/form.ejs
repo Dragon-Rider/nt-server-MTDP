@@ -21,16 +21,24 @@
     </script>
 </head>
 <body>
-<div class="recom-success hide">
-    <div class="recom-tip">
-        <div class="recom-sucImg"></div>
-        <span>已成功提交信息</span>
-        <p>1~2天内，推荐邮件会发送至被推荐人邮箱</p>
-        <p>候选人收到推荐邮件后，还需完善简历，才算完成内推</p>
-    </div>
-</div>
 <form id="form1" name="form1" class="J_form" method="post" action="postdata" >
     <div class="basicInfo">
+        <div class="inputDiv radioGourp">
+            <div class="iconDiv">
+                <img class="icon" src="./icon/group.png">
+            </div>
+            <div class="gap"></div>
+            <span>
+                <label>
+                    <input type="radio" name="workType" value="regular" checked><span>应届生</span>
+                </label>
+                
+                <label>
+                    <input type="radio" name="workType" value="intern"><span>实习生</span>
+                </label>
+            </span>
+        </div>
+
         <div class="inputDiv">
             <div class="iconDiv">
                 <img class="icon" src="./icon/name.png">
@@ -112,32 +120,23 @@
             -->
             </select>
         </div>
-
-        <div class="inputDiv radioGourp">
-            <div class="iconDiv">
-                <img class="icon" src="./icon/group.png">
-            </div>
-            
-            <div class="gap"></div>
-            <span>
-                <label>
-                    <input type="radio" name="workType" value="regular" checked><span>应届生</span>
-                </label>
-                
-                <label>
-                    <input type="radio" name="workType" value="intern"><span>实习生</span>
-                </label>
-            </span>
-        </div>
     </div>
     <div class="errorMessage hide J_error"></div>
     <div class="outer">
         <a href="javascript:;" type="submit" class="btn-next J_submit">提交</a>
     </div>
-
-    <script type="text/javascript" src="./js/lib/zepto.js"></script>
-    <script type="text/javascript" src="./js/lib/toast.js"></script>
-    <script type="text/javascript" src="./js/form.js"></script>
 </form>
+<div class="recom-success"><!-- hide -->
+    <div class="recom-tip">
+        <div class="recom-sucImg"></div>
+        <span>信息提交成功，只差最后一步！</span>
+        <p>请将公众号点评美团内推文章分享到微信群或朋友圈，并截图回复给公众号，即可完成内推</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/lib/zepto.js"></script>
+<script type="text/javascript" src="./js/lib/toast.js"></script>
+<script type="text/javascript" src="./js/form.js"></script>
+
 </body>
 </html>
