@@ -9,11 +9,14 @@ $(function() {
         if(requestSending){
             return ;
         }
+        console.log()
         var postdata = {
             name: $('.J_name').val(),
             phone: $('.J_phone').val(),
             email: $('.J_email').val(),
-            school: $('.J_school').val()
+            school: $('.J_school').val() || '',
+            interestGroupId:  $('.J_Group').val() || '1',
+            jobId:  $('.J_Job').val() || '7074',
         };
         requestSending = true;
         $.ajax({

@@ -6,7 +6,6 @@ $(function() {
     })
 
     $(".J_submit").on('click', function(){
-
         Toast('图片上传中...','',120000,'',true);
     })
 
