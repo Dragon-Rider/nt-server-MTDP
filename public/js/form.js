@@ -1,6 +1,16 @@
 $(function() {
     var requestSending = false;  //用户是否点击提交按钮
 
+    $($('#form1 .radioGourp input')[0]).on('click', function(){
+        //is regular
+        $('.only-intern').addClass('hide');
+        $('.only-regular').removeClass('hide');
+    });
+    $($('#form1 .radioGourp input')[1]).on('click', function(){
+        //is intern
+        $('.only-regular').addClass('hide');
+        $('.only-intern').removeClass('hide');
+    });
     $('.J_submit').on('click', function() {
         if(!validateForm()) {
             return;

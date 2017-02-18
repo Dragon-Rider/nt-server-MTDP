@@ -63,3 +63,22 @@ blockquote,body,button,dd,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend
 #form1 .J_submit{
     width: 350px;
 }
+
+.basicInfo {
+        border-bottom: 0px;
+}
+
+.basicInfo .inputDiv {
+    border-top: 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+#form1 .radioGourp label {
+    width: 150px;
+    display: inline-block;
+    font-weight: 400;
+}
+
+#form1 .radioGourp input{
+    width: initial;
+}

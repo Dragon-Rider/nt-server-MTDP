@@ -97,9 +97,9 @@
                 <option data-regularId='8376' data-internId='8377'>iOS开发工程师</option>
                 <option data-regularId='8374' data-internId='8375'>Web前端开发工程师</option>  
             <!-- 实习生多招的岗位 -->
-                <option data-internId='8436'>运维工程师</option>
+                <option class="only-intern hide" data-internId='8436'>运维工程师</option>
            <!-- 应届生多招的岗位 -->
-                <option data-regularId='8454'>财务专员</option>
+                <option class="only-regular" data-regularId='8454'>财务专员</option>
 
             <!-- 不招
                 <option value="7129">大数据平台开发工程师（2017届）</option>
@@ -111,6 +111,23 @@
                 <option value="7092">产品运营专员（2017届）</option>
             -->
             </select>
+        </div>
+
+        <div class="inputDiv radioGourp">
+            <div class="iconDiv">
+                <img class="icon" src="./icon/group.png">
+            </div>
+            
+            <div class="gap"></div>
+            <span>
+                <label>
+                    <input type="radio" name="workType" value="regular" checked><span>应届生</span>
+                </label>
+                
+                <label>
+                    <input type="radio" name="workType" value="intern"><span>实习生</span>
+                </label>
+            </span>
         </div>
     </div>
     <div class="errorMessage hide J_error"></div>
