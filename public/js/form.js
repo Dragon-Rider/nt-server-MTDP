@@ -23,8 +23,12 @@ $(function() {
             success: function (data) {
                 requestSending = false;
                 data = data || {};
+                
                 if(data.statusCode === 1){
-                    Toast('上传成功', '', 2000, '', true);
+                    var showSuccess = function(){
+                        $('.recom-success').removeClass("hide");
+                    }
+                    Toast('上传成功', showSuccess, 2000, '', true);                    
                 }
                 else if(data.statusCode === -1){
                     Toast('该手机号已注册', '', 2000, '', true);

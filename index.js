@@ -49,7 +49,6 @@ app.post('/postdata', function(req, res){
                 connection.end();
                 if (err1) {
                     var resData = {};
-                    console.log(err1);
                     resData["statusCode"] = -2;
                     resData["data"] = err1;
                     res.send(resData);
