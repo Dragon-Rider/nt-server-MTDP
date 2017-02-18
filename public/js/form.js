@@ -27,12 +27,11 @@ $(function() {
                     Toast('上传成功', '', 2000, '', true);
                 }
                 else if(data.statusCode === -1){
-                    $(".J_submit").removeClass("grey").text('提交');
                     Toast('该手机号已注册', '', 2000, '', true);
                 }else if(data.statusCode === -2){
-                    $(".J_submit").removeClass("grey").text('提交');
                     Toast('系统错误，请稍后尝试', '', 2000, '', true);
                 }
+                $(".J_submit").removeClass("grey").text('提交');
             },
             error: function (e) {
                 // todo 错误处理
