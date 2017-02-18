@@ -1,39 +1,45 @@
 $(function() {
-    var flag = false;  //用户是否点击提交按钮
+    var requestSending = false;  //用户是否点击提交按钮
 
     $('.J_submit').on('click', function() {
         if(!validateForm()) {
             return;
         }
-  
-        if (flag) {
-            return;
-        }
-
-        flag = true;
-
         $(".J_submit").addClass("grey").text('提交中');
-        $.post("/postdata", {
-                                name: $('.J_name').val(),
-                                phone: $('.J_phone').val(),
-                                email: $('.J_email').val(),
-                                school: $('.J_school').val()
-                            }, 
-            function(data) {
+        if(requestSending){
+            return ;
+        }
+        var postdata = {
+            name: $('.J_name').val(),
+            phone: $('.J_phone').val(),
+            email: $('.J_email').val(),
+            school: $('.J_school').val()
+        };
+        requestSending = true;
+        $.ajax({
+            type: 'post',
+            url: '/postdata',
+            data: postdata || {},
+            success: function (data) {
+                requestSending = false;
+                data = data || {};
                 if(data.statusCode === 1){
-                    alert("上传成功");
+                    Toast('上传成功', '', 2000, '', true);
                 }
                 else if(data.statusCode === -1){
                     $(".J_submit").removeClass("grey").text('提交');
-                    alert("该手机号已注册");
+                    Toast('该手机号已注册', '', 2000, '', true);
                 }else if(data.statusCode === -2){
-                    console.log(data.data);
                     $(".J_submit").removeClass("grey").text('提交');
-                    alert("信息上传失败，请刷新页面重新填写信息");
+                    Toast('系统错误，请稍后尝试', '', 2000, '', true);
                 }
-                location.reload();
+            },
+            error: function (e) {
+                // todo 错误处理
+                requestSending = false;
+                Toast('暂无网络连接，请检查网络设置', '', 2000, '', true);
             }
-        );
+        });
     }) 
 })
 
