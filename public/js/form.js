@@ -5,7 +5,7 @@ $(function() {
         if(!validateForm()) {
             return;
         }
-
+  
         if (flag) {
             return;
         }
@@ -13,7 +13,27 @@ $(function() {
         flag = true;
 
         $(".J_submit").addClass("grey").text('提交中');
-        $(".J_form")[0].submit();
+        $.post("/postdata", {
+                                name: $('.J_name').val(),
+                                phone: $('.J_phone').val(),
+                                email: $('.J_email').val(),
+                                school: $('.J_school').val()
+                            }, 
+            function(data) {
+                if(data.statusCode === 1){
+                    alert("上传成功");
+                }
+                else if(data.statusCode === -1){
+                    $(".J_submit").removeClass("grey").text('提交');
+                    alert("该手机号已注册");
+                }else if(data.statusCode === -2){
+                    console.log(data.data);
+                    $(".J_submit").removeClass("grey").text('提交');
+                    alert("信息上传失败，请刷新页面重新填写信息");
+                }
+                location.reload();
+            }
+        );
     }) 
 })
 

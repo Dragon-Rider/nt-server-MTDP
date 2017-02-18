@@ -19,31 +19,50 @@ app.get('/form', routes.form);
 app.get('/success', routes.success);
 app.get('/share', routes.share);
 
-
 //数据发送页面，跳转提交成功页面
 app.post('/postdata', function(req, res){
-    var data = req.body;
-    var connection = mysql.createConnection({
-        host     : process.env.MYSQL_HOST,
-        port     : 3306,  //process.env.MYSQL_PORT
-        user     : process.env.ACCESSKEY,
-        password : process.env.SECRETKEY,
-        database : 'app_' + process.env.APPNAME
-    });
-    var insertSQL = "INSERT INTO  `app_neitui100`.`neitui100` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "')";
-
-    connection.connect();
-
-    connection.query(insertSQL, function (err1, res1) {
-        if (err1) {
-            res.send("信息上传失败，请重新填写信息");
-            return;
-        } 
-    })
-
-    connection.end();
+    var dbName = 'app_neitui100';
+    var tableName = 'neitui100';
     
-    res.redirect("/success");
+    var connection = mysql.createConnection({
+            host     : process.env.MYSQL_HOST,
+            port     : 3306,  //process.env.MYSQL_PORT
+            user     : process.env.ACCESSKEY,
+            password : process.env.SECRETKEY,
+            database : 'app_' + process.env.APPNAME
+        });
+
+    var querySQL = "SELECT * FROM `" + tableName + "` WHERE `phone` = " + req.body.phone;
+    connection.connect();
+    connection.query(querySQL, function (err1, res1) {        
+        if (res1 && res1.length != 0) {
+            //phone exist
+            var resData = {};
+            resData["statusCode"] = -1;
+            resData["data"] = "phone existed";
+            connection.end();
+            res.send(resData);
+        } else{
+            var data = req.body;
+            var insertSQL = "INSERT INTO  `" + dbName + "`.`" + tableName +"` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "')";
+            connection.query(insertSQL, function (err1, res1) {
+                connection.end();
+                if (err1) {
+                    var resData = {};
+                    console.log(err1);
+                    resData["statusCode"] = -2;
+                    resData["data"] = err1;
+                    res.send(resData);
+                    return;
+                } else{ 
+                    var resData = {};
+                    resData["statusCode"] = 1;
+                    resData["data"] = "upload success";
+                    res.send(resData);
+                }
+            });           
+        }
+    });    
 });
 
 
