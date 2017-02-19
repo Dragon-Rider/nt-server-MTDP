@@ -105,3 +105,11 @@ blockquote,body,button,dd,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend
     text-align: left;
 }
 
+.recom-processImg{
+    height:60px;
+    width:.6rem;
+    margin-left:auto;
+    margin-right:auto;
+    background:url("../icon/process.png") 50% no-repeat;
+    background-size:100%
+}
