@@ -1,3 +1,4 @@
+
 $(function() {
     var requestSending = false;  //用户是否点击提交按钮
 
@@ -19,13 +20,21 @@ $(function() {
         if(requestSending){
             return ;
         }
+        var $selectedOption = $('.J_Job').find("option").not(function(){ return !this.selected }),
+            jobId = 0;
+       
+        if ($('.J_regular').prop('checked')) {
+            jobId = $selectedOption.data('regularid');
+        }else {
+            jobId = $selectedOption.data('internid');
+        }
         var postdata = {
             name: $('.J_name').val(),
             phone: $('.J_phone').val(),
             email: $('.J_email').val(),
             school: $('.J_school').val() || '',
             interestGroupId:  $('.J_Group').val() || '1',
-            jobId:  $('.J_Job').val() || '7074',
+            jobId:  jobId || '7074',
         };
         requestSending = true;
         $.ajax({
