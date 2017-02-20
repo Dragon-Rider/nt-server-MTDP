@@ -83,7 +83,7 @@ function validateForm() {
         err_job = '请选择应聘岗位!',
         err_empty = '输入不可为空!';
 
-    if(!$name.val() || !$phone.val() || !$email.val()) {
+    if(!$name.val() || !$phone.val() || !$email.val() || !$school.val()) {
         displayError(err_empty);
         return false;
     } 
@@ -106,5 +106,5 @@ function validateForm() {
 }
 
 function displayError(err_msg) {
-    $('.J_error').text(err_msg).show();
+    Toast(err_msg, '', 1000, '', true);
 }
