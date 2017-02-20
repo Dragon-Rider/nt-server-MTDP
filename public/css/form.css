@@ -96,7 +96,7 @@ blockquote,body,button,dd,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend
     width: 80%;
     text-align: center;
 }
-.recom-tip p, .recom-tip a{
+.recom-tip p{
     font-size: 15px;
     color: #999;
     margin-top: 12px;
@@ -108,7 +108,6 @@ blockquote,body,button,dd,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend
 .recom-tip a {
     font-size: 16px;
     color: #377ED2;
-    margin-top: 34px;
 }
 
 .recom-processImg{
