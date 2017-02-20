@@ -80,7 +80,7 @@ function validateForm() {
 
     var err_mail = '邮箱地址格式有误!',
         err_phone = '手机号码格式有误!',
-        err_job = '请选择工作岗位!',
+        err_job = '请选择应聘岗位!',
         err_empty = '输入不可为空!';
 
     if(!$name.val() || !$phone.val() || !$email.val()) {
