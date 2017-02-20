@@ -72,13 +72,15 @@ function validateForm() {
         $phone = $('.J_phone'),
         $email = $('.J_email'),
         $school = $('.J_school'),
+        $job = $('.J_Job');
         $error = $('.J_error');
 
     var phoneRegx = /^1\d{10}$/,
         emailRegx = /^[a-zA-Z.0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 
-    var err_msg = '邮箱填写错误',
-        err_phone = '手机号填写错误',
+    var err_mail = '邮箱地址格式有误!',
+        err_phone = '手机号码格式有误!',
+        err_job = '请选择工作岗位!',
         err_empty = '输入不可为空!';
 
     if(!$name.val() || !$phone.val() || !$email.val()) {
@@ -87,12 +89,16 @@ function validateForm() {
     } 
 
     if (!phoneRegx.test($phone.val())) {
-        displayError('手机号码格式有误!');
+        displayError(err_phone);
         return false;
     }
 
     if (!emailRegx.test($email.val())) {
-        displayError('邮箱地址格式有误!');
+        displayError(err_mail);
+        return false;
+    }
+    if($('.J_Job .groupDefault').val() === $job.val()){
+        displayError(err_job);
         return false;
     }
 
