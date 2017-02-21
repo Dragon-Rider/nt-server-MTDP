@@ -13,6 +13,9 @@ $(function() {
         $('.only-intern').removeClass('hide');
     });
     $('.J_submit').on('click', function() {
+        $('#form1').click(function(){
+            validateForm();
+        });
         if(!validateForm()) {
             return;
         }
@@ -120,10 +123,10 @@ function validateForm() {
         displayError(err_job);
         return false;
     }
-
+    $('.J_error').addClass('hide')
     return true;
 }
 
 function displayError(err_msg) {
-    Toast(err_msg, '', 1000, '', true);
+    $('.J_error').text(err_msg).removeClass('hide')
 }
