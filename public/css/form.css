@@ -42,8 +42,10 @@ blockquote,body,button,dd,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend
     color: #ff5c43;
     padding-top: .1rem;
     padding-bottom: .1rem;
-    text-align: center;
+    text-align: left;
     min-height: .21rem;
+    width: 300px;
+    margin: auto;
 }
 
 .hide {
