@@ -69,36 +69,54 @@ $(function() {
 })
 
 function validateForm() {
-    var $name = $('.J_name'),
-        $phone = $('.J_phone'),
-        $email = $('.J_email'),
-        $school = $('.J_school'),
-        $job = $('.J_Job');
-        $error = $('.J_error');
+    var input_name = $('.J_name').val().trim(),
+        input_phone = $('.J_phone').val().trim(),
+        input_email = $('.J_email').val().trim(),
+        input_school = $('.J_school').val().trim(),
+        input_job = $('.J_Job').val().trim();
 
     var phoneRegx = /^1\d{10}$/,
         emailRegx = /^[a-zA-Z.0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 
     var err_mail = '邮箱地址格式有误!',
         err_phone = '手机号码格式有误!',
-        err_job = '请选择应聘岗位!',
-        err_empty = '输入不可为空!';
+        err_job = '请选择应聘岗位!';
 
-    if(!$name.val() || !$phone.val() || !$email.val() || !$school.val()) {
-        displayError(err_empty);
+    var err_empty_name = '姓名不可为空!',
+        err_empty_phone = '手机号码不可为空!',
+        err_empty_mail = '邮箱地址不可为空!',
+        err_empty_school = '学校不可为空!';
+
+    if(!input_name){
+        displayError(err_empty_name);
         return false;
-    } 
+    }
 
-    if (!phoneRegx.test($phone.val())) {
+    if(!input_phone){
+        displayError(err_empty_phone);
+        return false;
+    }
+
+    if(!input_email){
+        displayError(err_empty_mail);
+        return false;
+    }
+
+    if(!input_school){
+        displayError(err_empty_school);
+        return false;
+    }
+
+    if (!phoneRegx.test(input_phone)) {
         displayError(err_phone);
         return false;
     }
 
-    if (!emailRegx.test($email.val())) {
+    if (!emailRegx.test(input_email)) {
         displayError(err_mail);
         return false;
     }
-    if($('.J_Job .groupDefault').val() === $job.val()){
+    if($('.J_Job .groupDefault').val() === input_job){
         displayError(err_job);
         return false;
     }
