@@ -78,7 +78,7 @@ $(function () {
         err_empty_mail = '邮箱地址不可为空!',
         err_empty_school = '学校不可为空!';
 
-    $('#form1 .J_Job').click(function () {
+    $('#form1 .J_Job').change(function () {
         if ($('.J_Job .groupDefault').val() !== $(this).val() && $('.J_error').text() == err_job) {
             $('.J_error').addClass('hide');
         }
