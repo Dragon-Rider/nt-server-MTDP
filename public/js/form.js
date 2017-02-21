@@ -62,6 +62,7 @@ $(function() {
                 // todo 错误处理
                 requestSending = false;
                 Toast('暂无网络连接，请检查网络设置', '', 2000, '', true);
+                $(".J_submit").removeClass("grey").text('提交');
             }
         });
     }) 
