@@ -134,15 +134,14 @@ app.get('/email', function (req, res) {
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
     });
-    //var selectSQL = "SELECT `email` FROM " + tableName + " WHERE `studentType` LIKE `1`";
-    var selectSQL = "SELECT * FROM "  + tableName + " WHERE 1";
+    var selectSQL = "SELECT `email` FROM " + tableName + " WHERE `studentType` LIKE 2";
+    //var selectSQL = "SELECT * FROM "  + tableName + " WHERE 1";
     
     connection.query(selectSQL, function(err, data) {
         if (err) {
             res.send(err)
             return;
         }
-        console.log(data)
         res.render("email.ejs",{'data': data});
     });
 
