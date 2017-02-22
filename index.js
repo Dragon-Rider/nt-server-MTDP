@@ -125,6 +125,7 @@ app.get('/datadisplay', function (req, res) {
 
 //邮箱页
 app.get('/email', function (req, res) {
+    var fromName = 'neitui100';
     // 连接共享型MySQL
     var connection = mysql.createConnection({
         host     : process.env.MYSQL_HOST,
@@ -133,7 +134,7 @@ app.get('/email', function (req, res) {
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
     });
-    var selectSQL = "SELECT `email` FROM `neitui100` WHERE 1";
+    var selectSQL = "SELECT `email` FROM " + tableName + " WHERE `studentType` LIKE `2`";
     
     connection.query(selectSQL, function(err, rows) {
         if (err) {
