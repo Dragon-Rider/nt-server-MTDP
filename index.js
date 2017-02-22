@@ -121,34 +121,6 @@ app.get('/datadisplay', function (req, res) {
     connection.end();
 });
 
-
-
-//邮箱页
-/*app.get('/email', function (req, res) {
-    var tableName = 'neitui100';
-    // 连接共享型MySQL
-    var connection = mysql.createConnection({
-        host     : process.env.MYSQL_HOST,
-        port     : process.env.MYSQL_PORT,
-        user     : process.env.ACCESSKEY,
-        password : process.env.SECRETKEY,
-        database : 'app_' + process.env.APPNAME
-    });
-    var selectSQL = "SELECT `email` FROM " + tableName + " WHERE `studentType` LIKE 2";
-    //var selectSQL = "SELECT * FROM "  + tableName + " WHERE 1";
-    
-    connection.query(selectSQL, function(err, data) {
-        if (err) {
-            res.send(err)
-            return;
-        }
-        res.render("email.ejs",{'data': data});
-    });
-
-    connection.end();
-});*/
-
-
 //测试页面
 app.get('/test', function (req, res) {
     //这个页面判断用户来源

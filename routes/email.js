@@ -21,7 +21,7 @@ exports.email = function(req, res) {
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
     });
-    var selectSQL = "SELECT `email` FROM " + tableName + " WHERE `studentType` LIKE 2";
+    var selectSQL = "SELECT email FROM " + tableName + " WHERE `studentType` LIKE 1 LIMIT 0 , 30";
 
     connection.query(selectSQL, function(err, data) {
         if (err) {
