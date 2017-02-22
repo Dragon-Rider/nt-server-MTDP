@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());//use要写在所有路由之前，不然该功能就没有被启用
 
 exports.email = function(req, res) {
-    var fromName = 'neitui100';
+    var tableName = 'neitui100';
         
     var connection = mysql.createConnection({
         host     : process.env.MYSQL_HOST,

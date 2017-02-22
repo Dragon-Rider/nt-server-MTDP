@@ -141,7 +141,7 @@ app.get('/email', function (req, res) {
             res.send(err)
             return;
         }
-
+        console.log(data)
         res.render("email.ejs",{'data': data});
     });
 
