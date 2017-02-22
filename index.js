@@ -1,6 +1,7 @@
 var mysql   = require('mysql'),
     express = require('express'),
     routes  = require("./routes"),
+    Email   = require("./routes/email.js"),
     bodyParser = require('body-parser'),
     favicon = require('serve-favicon'),   
     formidable = require('formidable'),
@@ -18,6 +19,7 @@ app.use(favicon(__dirname + '/public/icon/favicon.ico'));//解决favicon请求40
 app.get('/form', routes.form);
 app.get('/success', routes.success);
 app.get('/share', routes.share);
+app.get('/email', Email.email);
 
 //数据发送页面，跳转提交成功页面
 app.post('/postdata', function(req, res){
