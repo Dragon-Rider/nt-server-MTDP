@@ -20,12 +20,14 @@ $(function () {
             return;
         }
         var $selectedOption = $('.J_Job').find("option").not(function () { return !this.selected }),
-            jobId = 0;
+            jobId = 0,
+            studentType = 1;
 
         if ($('.J_regular').prop('checked')) {
             jobId = $selectedOption.data('regularid');
         } else {
             jobId = $selectedOption.data('internid');
+            studentType = 2;
         }
         var postdata = {
             name: $('.J_name').val(),
@@ -34,6 +36,7 @@ $(function () {
             school: $('.J_school').val() || '',
             interestGroupId: $('.J_Group').val() || '1',
             jobId: jobId || '7074',
+            studentType: studentType
         };
         requestSending = true;
         $.ajax({

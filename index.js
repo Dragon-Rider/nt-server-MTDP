@@ -44,7 +44,7 @@ app.post('/postdata', function(req, res){
             res.send(resData);
         } else{
             var data = req.body;
-            var insertSQL = "INSERT INTO  `" + dbName + "`.`" + tableName +"` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "')";
+            var insertSQL = "INSERT INTO  `" + dbName + "`.`" + tableName +"` (`name`, `phone`, `email`, `school`, `interestGroupId`, `jobId`, `studentType`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.interestGroupId + "', '" + data.jobId + "', '" + data.studentType + "')";
             connection.query(insertSQL, function (err1, res1) {
                 connection.end();
                 if (err1) {
