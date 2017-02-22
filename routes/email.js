@@ -21,18 +21,18 @@ exports.email = function(req, res) {
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
     });
-    var selectSQL = "SELECT `email` FROM " + tableName + " WHERE `studentType` LIKE `2`";
+    var selectSQL = "SELECT `email` FROM " + tableName + " WHERE `studentType` LIKE 2";
 
-    connection.query(selectSQL, function(err, rows) {
+    connection.query(selectSQL, function(err, data) {
         if (err) {
             res.send(err)
             return;
         }
 
-        res.render("email",{'data': rows});
+        res.render("email",{'data': data});
     });
 
     connection.end();
         
-    //res.render("email",{'data': ['278362241@qq.com','jianghuan03@meituan.com']});
+    //res.render("email",{'data': ['123123123@qq.com','123132123@qwe.com']});
 }

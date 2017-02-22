@@ -19,7 +19,7 @@ app.use(favicon(__dirname + '/public/icon/favicon.ico'));//解决favicon请求40
 app.get('/form', routes.form);
 app.get('/success', routes.success);
 app.get('/share', routes.share);
-//app.get('/email', Email.email);
+app.get('/email', Email.email);
 
 //数据发送页面，跳转提交成功页面
 app.post('/postdata', function(req, res){
@@ -124,7 +124,7 @@ app.get('/datadisplay', function (req, res) {
 
 
 //邮箱页
-app.get('/email', function (req, res) {
+/*app.get('/email', function (req, res) {
     var tableName = 'neitui100';
     // 连接共享型MySQL
     var connection = mysql.createConnection({
@@ -146,7 +146,7 @@ app.get('/email', function (req, res) {
     });
 
     connection.end();
-});
+});*/
 
 
 //测试页面
