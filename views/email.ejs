@@ -13,18 +13,32 @@
 </head>
 <body>
     <h1>应届生邮箱</h1>
-    <div class="J-inter-email item-container">
+    <div class="J-regular-email item-container">
 
-        <% for(var i=0; i<data.length; i++) {%>
+        <% for(var i=0; i<data.regular.length; i++) {%>
             <tr>
-                <td><%= data[i].email %>;</td>
+                <td><%= data.regular[i].email %>;</td>
             </tr>
         <% } %>
     </div>
+    <button class="add-flag-btn regular">add sent flag in db(Regular)</button>
 
+    <h1>实习生邮箱</h1>
+    <div class="J-intern-email item-container">
+
+        <% for(var i=0; i<data.intern.length; i++) {%>
+            <tr>
+                <td><%= data.intern[i].email %>;</td>
+            </tr>
+        <% } %>
+    </div>
+    <button class="add-flag-btn intern">add sent flag in db(Intern)</button>
 
 
 </body>
 <script type="text/javascript">
 </script>
+<script type="text/javascript" src="./js/lib/zepto.js"></script>
+<script type="text/javascript" src="./js/lib/toast.js"></script>
+<script type="text/javascript" src="./js/email.js"></script>
 </html>

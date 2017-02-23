@@ -11,27 +11,39 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());//use要写在所有路由之前，不然该功能就没有被启用
 
 exports.email = function(req, res) {
+    const REGULAR = 1;
+    const INTERN = 2;
     var tableName = 'neitui100';
-        
+    
     var connection = mysql.createConnection({
         host     : process.env.MYSQL_HOST,
         port     : process.env.MYSQL_PORT,
         user     : process.env.ACCESSKEY,
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
-    });
-    var selectSQL = "SELECT `email` FROM " + tableName + " WHERE `studentType` LIKE 1 LIMIT 0 , 30";
+    });    
 
-    connection.query(selectSQL, function(err, data) {
+    function getSelectSQL(selectType){
+        return  "SELECT `email` FROM " + tableName + " WHERE `mailed` = false AND `studentType` LIKE " + selectType + " LIMIT 0 , 30";
+    }
+
+    connection.query(getSelectSQL(REGULAR), function(err, dataRegular) {
         if (err) {
-            res.send(err)
+            res.send(err);
+            connection.end();
             return;
         }
-
-        res.render("email",{'data': data});
+        connection.query(getSelectSQL(INTERN), function(err, dataInter){
+            if (err) {
+                res.send(err);
+                connection.end();
+                return;
+            }
+            var data = {};
+            data["regular"] = dataRegular;
+            data["intern"] = dataInter;
+            res.render("email",{'data': data});
+            connection.end();
+        });        
     });
-
-    connection.end();
-        
-    //res.render("email",{'data': ['123123123@qq.com','123132123@qwe.com']});
 }

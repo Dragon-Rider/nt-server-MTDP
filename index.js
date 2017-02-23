@@ -21,18 +21,60 @@ app.get('/success', routes.success);
 app.get('/share', routes.share);
 app.get('/email', Email.email);
 
-//数据发送页面，跳转提交成功页面
-app.post('/postdata', function(req, res){
-    var dbName = 'app_neitui100';
-    var tableName = 'neitui100';
-    
-    var connection = mysql.createConnection({
+function createConnectSql(){
+    return mysql.createConnection({
             host     : process.env.MYSQL_HOST,
             port     : 3306,  //process.env.MYSQL_PORT
             user     : process.env.ACCESSKEY,
             password : process.env.SECRETKEY,
             database : 'app_' + process.env.APPNAME
         });
+}
+//get post data from email page
+//set each ele in arr from request "sent flag"
+app.post('/addSentFlag', function(req, res) {
+    let totalLength = req.body.emails.length;
+    let executedItem = 0;
+    let data = {};
+    data.updateSuccess = [];
+    data.updateFailed = [];
+
+    req.body.emails.map(function(ele) {            
+        if(!ele){
+            ++executedItem;
+            return;
+        }
+        let connection = createConnectSql();
+        let execSQL = "UPDATE neitui100 set mailed=true WHERE email = \"" + ele + "\"";
+        connection.connect();
+        connection.query(execSQL, function (err, res) {
+            ++executedItem;
+            if(err){
+                data.updateFailed.push(ele);
+            }else{
+                data.updateSuccess.push(ele);
+            }
+            connection.end();                        
+        });
+    });    
+    //send res after all item executed
+    function sendRes(){
+        if(executedItem != totalLength){
+            setTimeout(sendRes, 1000);
+        }else{
+            console.log(data)
+            res.send(data);
+        }
+    }
+    sendRes();
+});
+
+//数据发送页面，跳转提交成功页面
+app.post('/postdata', function(req, res){
+    var dbName = 'app_neitui100';
+    var tableName = 'neitui100';
+
+    var connection = createConnectSql();
 
     var querySQL = "SELECT * FROM `" + tableName + "` WHERE `phone` = " + req.body.phone;
     connection.connect();
@@ -75,13 +117,8 @@ app.get('/', function (req, res) {
 //数据发送页面
 app.get('/mydatabase', function (req, res) {
     // 连接共享型MySQL
-    var connection = mysql.createConnection({
-        host     : process.env.MYSQL_HOST,
-        port     : process.env.MYSQL_PORT,
-        user     : process.env.ACCESSKEY,
-        password : process.env.SECRETKEY,
-        database : 'app_' + process.env.APPNAME
-    });
+    var connection = createConnectSql();
+
     var selectSQL = "SELECT `name` ,  `interestGroupId` ,  `jobId` ,  `email` ,  `phone` FROM `neitui100` WHERE 1";
 
     connection.query(selectSQL, function(err, rows) {
@@ -100,13 +137,8 @@ app.get('/mydatabase', function (req, res) {
 //数据报表展示页
 app.get('/datadisplay', function (req, res) {
     // 连接共享型MySQL
-    var connection = mysql.createConnection({
-        host     : process.env.MYSQL_HOST,
-        port     : process.env.MYSQL_PORT,
-        user     : process.env.ACCESSKEY,
-        password : process.env.SECRETKEY,
-        database : 'app_' + process.env.APPNAME
-    });
+    var connection = createConnectSql();
+    
     var selectSQL = "SELECT * FROM `neitui100` WHERE 1";
     
     connection.query(selectSQL, function(err, rows) {
