@@ -23,7 +23,10 @@ $(function () {
                 console.log(data);
                 if(data.updateFailed.length != 0){
                     alert(data.updateFailed.length + " mail update failed");
+                    console.log("failed mail--------------------------");
                     console.log(data.updateFailed);
+                    console.log("success mail--------------------------");
+                    console.log(data.updateSuccess);
                 }else{
                     alert("all update success");
                     location.reload();
