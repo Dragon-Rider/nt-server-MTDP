@@ -50,6 +50,8 @@ app.post('/addSentFlag', function(req, res) {
         connection.query(execSQL, function (err, res) {
             ++executedItem;
             if(err){
+                console.log("executing update " + ele + "err:");
+                console.log(err);
                 data.updateFailed.push(ele);
             }else{
                 data.updateSuccess.push(ele);
