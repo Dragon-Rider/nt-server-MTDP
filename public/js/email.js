@@ -1,6 +1,6 @@
 $(function () {
-    const REGULAR = 0;
-    const INTERN = 1;
+    var REGULAR = 0;
+    var INTERN = 1;
 
     $('.add-flag-btn.regular').click(function() {
         postSetFlagReq(REGULAR);

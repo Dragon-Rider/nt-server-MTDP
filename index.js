@@ -44,8 +44,8 @@ app.post('/addSentFlag', function(req, res) {
             ++executedItem;
             return;
         }
-        let connection = createConnectSql();
-        let execSQL = "UPDATE neitui100 set mailed=true WHERE email = \"" + ele + "\"";
+        var connection = createConnectSql();
+        var execSQL = "UPDATE neitui100 set mailed=true WHERE email = \"" + ele + "\"";
         connection.connect();
         connection.query(execSQL, function (err, res) {
             ++executedItem;
