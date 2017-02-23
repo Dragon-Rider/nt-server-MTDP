@@ -11,7 +11,7 @@ $(function () {
     });
 
     function postSetFlagReq(type){
-        let textMails = (type === REGULAR 
+        var textMails = (type === REGULAR 
                             ? $('.J-regular-email.item-container').text()
                             : $('.J-intern-email.item-container').text()
                         );

@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());//use要写在所有路由之前，不然该功能就没有被启用
 
 exports.email = function(req, res) {
-    const REGULAR = 1;
-    const INTERN = 2;
+    var REGULAR = 1;
+    var INTERN = 2;
     var tableName = 'neitui100';
     
     var connection = mysql.createConnection({

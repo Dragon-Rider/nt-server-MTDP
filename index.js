@@ -33,9 +33,9 @@ function createConnectSql(){
 //get post data from email page
 //set each ele in arr from request "sent flag"
 app.post('/addSentFlag', function(req, res) {
-    let totalLength = req.body.emails.length;
-    let executedItem = 0;
-    let data = {};
+    var totalLength = req.body.emails.length;
+    var executedItem = 0;
+    var data = {};
     data.updateSuccess = [];
     data.updateFailed = [];
 
@@ -138,7 +138,7 @@ app.get('/mydatabase', function (req, res) {
 app.get('/datadisplay', function (req, res) {
     // 连接共享型MySQL
     var connection = createConnectSql();
-    
+
     var selectSQL = "SELECT * FROM `neitui100` WHERE 1";
     
     connection.query(selectSQL, function(err, rows) {
