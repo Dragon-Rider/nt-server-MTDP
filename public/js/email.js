@@ -21,12 +21,8 @@ $(function () {
             data: {'emails' : textMails.replace(/\s+/g,"").split(";")},
             success: function (data) {
                 console.log(data);
-                if(data.updateFailed.length != 0){
-                    alert(data.updateFailed.length + " mail update failed");
-                    console.log("failed mail--------------------------");
-                    console.log(data.updateFailed);
-                    console.log("success mail--------------------------");
-                    console.log(data.updateSuccess);
+                if(data[status] == -1){
+                    alert("mail update failed");
                 }else{
                     alert("all update success");
                     location.reload();

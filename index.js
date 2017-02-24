@@ -21,54 +21,53 @@ app.get('/success', routes.success);
 app.get('/share', routes.share);
 app.get('/email', Email.email);
 
-function createConnectSql(){
-    return mysql.createConnection({
+function createConnectSql(param = 1){
+    if(param == 1){
+        return mysql.createConnection({
+                host     : process.env.MYSQL_HOST,
+                port     : process.env.MYSQL_PORT,
+                user     : process.env.ACCESSKEY,
+                password : process.env.SECRETKEY,
+                database : 'app_' + process.env.APPNAME
+            });    
+    }else if(param == 2){
+        return mysql.createConnection({
             host     : process.env.MYSQL_HOST,
-            port     : 3306,  //process.env.MYSQL_PORT
-            user     : process.env.ACCESSKEY,
-            password : process.env.SECRETKEY,
-            database : 'app_' + process.env.APPNAME
-        });
+            port     : process.env.MYSQL_PORT,
+            user     : 'root',//process.env.ACCESSKEY,
+            password : 'root',//process.env.SECRETKEY,
+            database : 'mydb2'//app_' + process.env.APPNAME
+        });    
+    }
+    
 }
 //get post data from email page
 //set each ele in arr from request "sent flag"
-app.post('/addSentFlag', function(req, res) {
-    var totalLength = req.body.emails.length;
-    var executedItem = 0;
+app.post('/addSentFlag', function(req, resData) {
     var data = {};
-    data.updateSuccess = [];
-    data.updateFailed = [];
 
-    req.body.emails.map(function(ele) {            
+    var updateSQL = "UPDATE neitui100 SET mailed = true WHERE email IN (";
+    req.body.emails.map(function(ele) {
         if(!ele){
-            ++executedItem;
             return;
         }
-        var connection = createConnectSql();
-        var execSQL = "UPDATE neitui100 set mailed=true WHERE email = \"" + ele + "\"";
-        connection.connect();
-        connection.query(execSQL, function (err, res) {
-            ++executedItem;
-            if(err){
-                console.log("executing update " + ele + "err:");
-                console.log(err);
-                data.updateFailed.push(ele);
-            }else{
-                data.updateSuccess.push(ele);
-            }
-            connection.end();                        
-        });
-    });    
-    //send res after all item executed
-    function sendRes(){
-        if(executedItem != totalLength){
-            setTimeout(sendRes, 1000);
+        updateSQL += "\"" + ele + "\",";
+    });
+    updateSQL = updateSQL.substr(0, updateSQL.length - 1) + ");";
+    var connection = createConnectSql();
+    connection.query(updateSQL, function (err, res) {
+        console.log(res);
+        if(err){
+            console.log(err)
+            data["status"] = -1;
+            data["data"] = err;
         }else{
-            console.log(data)
-            res.send(data);
+            data["status"] = 0;
+            data["data"] = "SUCCESS";
         }
-    }
-    sendRes();
+        resData.send(data);
+        connection.end();                        
+    });
 });
 
 //数据发送页面，跳转提交成功页面

@@ -11,19 +11,32 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());//use要写在所有路由之前，不然该功能就没有被启用
 
 //提供邮箱服务，给运营人员发邮件使用
-
+function createConnectSql(param = 1) {
+    if(param == 1){
+        return mysql.createConnection({
+                host     : process.env.MYSQL_HOST,
+                port     : process.env.MYSQL_PORT,
+                user     : process.env.ACCESSKEY,
+                password : process.env.SECRETKEY,
+                database : 'app_' + process.env.APPNAME
+            });    
+    }else if(param == 2){
+        return mysql.createConnection({
+            host     : process.env.MYSQL_HOST,
+            port     : process.env.MYSQL_PORT,
+            user     : 'root',//process.env.ACCESSKEY,
+            password : 'root',//process.env.SECRETKEY,
+            database : 'mydb2'//app_' + process.env.APPNAME
+        });    
+    }
+    
+}
 exports.email = function(req, res) {
     var REGULAR = 1;
     var INTERN = 2;
     var tableName = 'neitui100';
     
-    var connection = mysql.createConnection({
-        host     : process.env.MYSQL_HOST,
-        port     : process.env.MYSQL_PORT,
-        user     : process.env.ACCESSKEY,
-        password : process.env.SECRETKEY,
-        database : 'app_' + process.env.APPNAME
-    });    
+    var connection = createConnectSql();
 
     function getSelectSQL(selectType){
         return  "SELECT `email` FROM " + tableName + " WHERE `mailed` = false AND `studentType` LIKE " + selectType + " LIMIT 0 , 30";

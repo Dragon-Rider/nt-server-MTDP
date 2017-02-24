@@ -54,7 +54,7 @@ $(function () {
                     Toast('上传成功', showSuccess, 2000, '', true);
                 }
                 else if (data.statusCode === -1) {
-                    Toast('该手机号已注册', '', 2000, '', true);
+                     displayError('该手机号已注册');
                 } else if (data.statusCode === -2) {
                     Toast('系统错误，请稍后尝试', '', 2000, '', true);
                 }
