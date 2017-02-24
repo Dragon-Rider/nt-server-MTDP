@@ -10,6 +10,14 @@ $(function () {
         postSetFlagReq(INTERN);
     });
 
+    $('#copy-regular-emails').click(function() {
+        CopyToClipboard('regular-emails');
+    });
+
+    $('#copy-intern-emails').click(function() {
+        CopyToClipboard('intern-emails');
+    });
+
     function postSetFlagReq(type){
         var textMails = (type === REGULAR 
                             ? $('.J-regular-email.item-container').text()
@@ -34,6 +42,21 @@ $(function () {
             }
         });
     }    
+
+    function CopyToClipboard(containerid) {
+        if (document.selection) { 
+            var range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById(containerid));
+            range.select().createTextRange();
+            document.execCommand("Copy"); 
+
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(containerid));
+            window.getSelection().addRange(range);
+            document.execCommand("Copy");
+            alert("text copied"); 
+    }}
 })
 
 
