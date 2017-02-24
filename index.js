@@ -21,25 +21,14 @@ app.get('/success', routes.success);
 app.get('/share', routes.share);
 app.get('/email', Email.email);
 
-function createConnectSql(param = 1){
-    if(param == 1){
-        return mysql.createConnection({
-                host     : process.env.MYSQL_HOST,
-                port     : process.env.MYSQL_PORT,
-                user     : process.env.ACCESSKEY,
-                password : process.env.SECRETKEY,
-                database : 'app_' + process.env.APPNAME
-            });    
-    }else if(param == 2){
-        return mysql.createConnection({
-            host     : process.env.MYSQL_HOST,
-            port     : process.env.MYSQL_PORT,
-            user     : 'root',//process.env.ACCESSKEY,
-            password : 'root',//process.env.SECRETKEY,
-            database : 'mydb2'//app_' + process.env.APPNAME
-        });    
-    }
-    
+function createConnectSql(){
+    return mysql.createConnection({
+        host     : process.env.MYSQL_HOST,
+        port     : process.env.MYSQL_PORT,
+        user     : process.env.ACCESSKEY,
+        password : process.env.SECRETKEY,
+        database : 'app_' + process.env.APPNAME
+    }); 
 }
 //get post data from email page
 //set each ele in arr from request "sent flag"
