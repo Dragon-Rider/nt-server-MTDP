@@ -109,7 +109,7 @@ function bindEvents() {
                 if (data.statusCode === 1) {
                     var showSuccess = function () {
                         $('.J-result').removeClass('hide');
-                        $('.J-title, .J-form, .J-icon-group').addClass('hide');
+                        $('.J-title, .J-form').addClass('hide');
                     }
                     Toast('上传成功', showSuccess, 2000, '', true);
                 }
