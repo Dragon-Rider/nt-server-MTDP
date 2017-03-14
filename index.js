@@ -61,7 +61,6 @@ app.post('/addSentFlag', function(req, resData) {
 });
 
 
-
 //百度内推数据发送页面，跳转提交成功页面。需要抽出来
 app.post('/ajax-form-baidu', function(req, res){
     var dbName = 'app_neitui100';
@@ -81,7 +80,7 @@ app.post('/ajax-form-baidu', function(req, res){
             res.send(resData);
         } else{
             var data = req.body;
-            var insertSQL = "INSERT INTO  `" + dbName + "`.`" + tableName +"` (`name`, `phone`, `email`, `school`, `jobId`, `degree`, `graduateTime`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.jobId + "', '" + data.degree + "', '" + data.graduateTime + "')";
+            var insertSQL = "INSERT INTO  `" + dbName + "`.`" + tableName +"` (`name`, `phone`, `email`, `school`, `jobId`, `degree`, `graduateTime`, `reason`) VALUES ('" + data.name + "', '" + data.phone + "', '" + data.email + "', '" + data.school + "', '" + data.jobId + "', '" + data.degree + "', '" + data.graduateTime + "', '" + data.reason + "')";
 
             connection.query(insertSQL, function (err1, res1) {
                 connection.end();

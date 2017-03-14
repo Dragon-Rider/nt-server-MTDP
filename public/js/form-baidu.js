@@ -16,6 +16,7 @@ $(function () {
     this.bindEvents();
 })
 
+
 function bindEvents() {
     /*
     $('#form1 .J-job').change(function () {
@@ -58,13 +59,15 @@ function bindEvents() {
             }
         }
 
-/*        if ($(this).attr("class") === "J-job") {
+        /*
+        if ($(this).attr("class") === "J-job") {
             if ($('.J-job-default').val() === jobVal) {
                 displayError(errEmptyJob);
             } else if($('.J-error').text() == errEmptyJob){
                 $('.J-error').addClass('hide');
             }
-        }*/
+        }
+        */
     });
 
     $('.J-submit').on('click', function () {
@@ -88,6 +91,7 @@ function bindEvents() {
             phone: $('.J-phone').val().trim(),
             email: $('.J-email').val().trim(),
             school: $('.J-school').val().trim() || '',
+            reason: $('.J-reason').val().trim() || '',
             jobId: jobId || '1002',
             degree: degree || '201',
             graduateTime: graduateTime || '301'
