@@ -1,33 +1,3 @@
-.recom-success .recom-tip {
-    margin-top: .605rem;
-    margin: .605rem auto 0;
-    width: 80%;
-    text-align: center;
-}
-.recom-tip p{
-    font-size: 15px;
-    color: #999;
-    margin-top: 12px;
-    display: inline-block;
-    line-height: 1.2;
-    text-align: left;
-}
-
-.recom-tip a {
-    font-size: 16px;
-    color: #377ED2;
-}
-
-.recom-processImg{
-    height:60px;
-    width:60px;
-    margin-left:auto;
-    margin-right:auto;
-    background:url("../icon/process.png") 50% no-repeat;
-    background-size:100%;
-}
-
-/*~~~~~~~~~~~~~~设置新的样式~~~~~~~~~~~~~~*/
 body {
     margin: 0 8px;
     padding: 0;
@@ -235,3 +205,26 @@ h1 {
     line-height: 20px;
     margin: 0 auto;
 }
+.result{
+    margin: 30px 15px 20px;
+    text-align: center;
+}
+.result .result-img-success{
+    height:60px;
+    width:60px;
+    margin: 0 auto 10px;
+    background:url("../icon/success.png") 50% no-repeat;
+    background-size:100%;
+}
+.result p{
+    font-size: 15px;
+    color: #999;
+    margin-top: 12px;
+    display: inline-block;
+    text-align: left;
+}
+.result a {
+    font-size: 16px;
+    color: #377ED2;
+}
+
