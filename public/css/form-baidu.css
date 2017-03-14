@@ -32,9 +32,6 @@ body {
     margin: 0 8px;
     padding: 0;
 }
-.hide {
-    display: none;
-}
 a {
     text-decoration: none;
 }
@@ -42,6 +39,9 @@ h1 {
     font-size: 19px;
     text-align: center;
     margin: 20px 0;
+}
+.hide {
+    display: none;
 }
 .basicInfo {
     padding: 0 15px;
@@ -205,6 +205,9 @@ h1 {
     color: #fff;
     font-size: 18px;
     border-radius: 5px;
+}
+.form-submit .grey {
+    background-color: #999;
 }
 .icon-group {
     margin: 20px 0;
