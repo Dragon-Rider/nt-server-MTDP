@@ -51,6 +51,17 @@ h1 {
     height: 0;
 }
 .form-item input, .form-item select, .textarea-item textarea{
+    outline-color: invert ;
+    outline-style: none ;
+    outline-width: 0px ;
+    border: none ;
+    border-style: none ;
+    text-shadow: none ;
+    -webkit-appearance: none ;
+    -webkit-user-select: text ;
+    outline-color: transparent ;
+    box-shadow: none;
+
     padding-left: 10px;
     border: 1px #E0E7EE solid;
     border-radius: 5px;

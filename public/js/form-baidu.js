@@ -8,7 +8,7 @@ var errEmailText = '邮箱地址格式有误!',
     errEmptyPhone = '手机号码不可为空!',
     errEmptyEmail = '邮箱地址不可为空!',
     errEmptySchool = '学校不可为空!',
-    errEmptyJob = '请选择应聘岗位!';
+    errEmptyJob = '应聘岗位不可为空!';
 
 var requestSending = false;  //用户是否点击提交按钮
 
@@ -36,7 +36,7 @@ function bindEvents() {
         if ($(this).attr("class") === "J-phone") {
             if (!$(this).val().trim()) {
                 displayError(errEmptyPhone);
-            } else if (!phoneRegx.test(phoneVal)) {
+            } else if (!phoneRegx.test($(this).val().trim())) {
                 displayError(errPhoneText);
             } else if($('.J-error').text() == errEmptyPhone || $('.J-error').text() == errPhoneText){
                 $('.J-error').addClass('hide');
@@ -45,7 +45,7 @@ function bindEvents() {
         if ($(this).attr("class") === "J-email") {
             if (!$(this).val().trim()) {
                 displayError(errEmptyEmail);
-            } else if (!emailRegx.test(emailVal)) {
+            } else if (!emailRegx.test($(this).val().trim())) {
                 displayError(errEmailText);
             } else if($('.J-error').text() == errEmptyEmail || $('.J-error').text() == errEmailText){
                 $('.J-error').addClass('hide');
@@ -136,41 +136,36 @@ function validateForm() {
         phoneVal = $('.J-phone').val().trim(),
         emailVal = $('.J-email').val().trim(),
         schoolVal = $('.J-school').val().trim(),
-        jobVal = $('.J-job').val().trim();
+        jobVal = $('.J-job').find("option").not(function () { return !this.selected}).data('internid');
 
     if (!nameVal) {
         displayError(errEmptyName);
         return false;
     }
-
     if (!phoneVal) {
         displayError(errEmptyPhone);
         return false;
     }
-
     if (!emailVal) {
         displayError(errEmptyEmail);
         return false;
     }
-
     if (!schoolVal) {
         displayError(errEmptySchool);
         return false;
     }
-
     if (!phoneRegx.test(phoneVal)) {
         displayError(errPhoneText);
         return false;
     }
-
     if (!emailRegx.test(emailVal)) {
         displayError(errEmailText);
         return false;
     }
-/*    if ($('.J-job .groupDefault').val() === jobVal) {
-        displayError(errJobText);
+    if (1001 == jobVal) {
+        displayError(errEmptyJob);
         return false;
-    }*/
+    }
 
     return true;
 }
