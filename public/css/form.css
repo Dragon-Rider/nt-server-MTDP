@@ -119,3 +119,11 @@ blockquote,body,button,dd,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend
     background:url("../icon/process.png") 50% no-repeat;
     background-size:100%
 }
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+

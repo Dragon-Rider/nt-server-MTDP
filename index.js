@@ -3,7 +3,7 @@ var mysql   = require('mysql'),
     routes  = require("./routes"),
     Email   = require("./routes/email.js"),
     bodyParser = require('body-parser'),
-    favicon = require('serve-favicon'),   
+    favicon = require('serve-favicon'),
     formidable = require('formidable'),
     http = require('http'),
     util = require('util');
@@ -17,6 +17,7 @@ app.use(bodyParser.json());//use要写在所有路由之前，不然该功能就
 app.use(favicon(__dirname + '/public/icon/favicon.ico'));//解决favicon请求404的问题
 
 app.get('/form', routes.form);
+app.get('/form-baidu', routes.formBaidu);
 app.get('/success', routes.success);
 app.get('/share', routes.share);
 app.get('/email', Email.email);
@@ -28,7 +29,7 @@ function createConnectSql(){
         user     : process.env.ACCESSKEY,
         password : process.env.SECRETKEY,
         database : 'app_' + process.env.APPNAME
-    }); 
+    });
 }
 //get post data from email page
 //set each ele in arr from request "sent flag"
@@ -55,7 +56,7 @@ app.post('/addSentFlag', function(req, resData) {
             data["data"] = "SUCCESS";
         }
         resData.send(data);
-        connection.end();                        
+        connection.end();
     });
 });
 
@@ -68,7 +69,7 @@ app.post('/postdata', function(req, res){
 
     var querySQL = "SELECT * FROM `" + tableName + "` WHERE `phone` = " + req.body.phone;
     connection.connect();
-    connection.query(querySQL, function (err1, res1) {        
+    connection.query(querySQL, function (err1, res1) {
         if (res1 && res1.length != 0) {
             //phone exist
             var resData = {};
@@ -87,15 +88,15 @@ app.post('/postdata', function(req, res){
                     resData["data"] = err1;
                     res.send(resData);
                     return;
-                } else{ 
+                } else{
                     var resData = {};
                     resData["statusCode"] = 1;
                     resData["data"] = "upload success";
                     res.send(resData);
                 }
-            });           
+            });
         }
-    });    
+    });
 });
 
 
@@ -130,7 +131,7 @@ app.get('/datadisplay', function (req, res) {
     var connection = createConnectSql();
 
     var selectSQL = "SELECT * FROM `neitui100` WHERE 1";
-    
+
     connection.query(selectSQL, function(err, rows) {
         if (err) {
             res.send(err)
@@ -160,7 +161,7 @@ app.post('/upload', function(req, res){
     form.uploadDir = "uploads/images/";
     //保留后缀
     form.keepExtensions = true;
-    //设置单文件大小限制    
+    //设置单文件大小限制
     form.maxFieldsSize = 2 * 1024 * 1024;
     //form.maxFields = 1000;  设置所有文件的大小总和
 

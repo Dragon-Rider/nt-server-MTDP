@@ -1,0 +1,234 @@
+.recom-success .recom-tip {
+    margin-top: .605rem;
+    margin: .605rem auto 0;
+    width: 80%;
+    text-align: center;
+}
+.recom-tip p{
+    font-size: 15px;
+    color: #999;
+    margin-top: 12px;
+    display: inline-block;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.recom-tip a {
+    font-size: 16px;
+    color: #377ED2;
+}
+
+.recom-processImg{
+    height:60px;
+    width:60px;
+    margin-left:auto;
+    margin-right:auto;
+    background:url("../icon/process.png") 50% no-repeat;
+    background-size:100%;
+}
+
+/*~~~~~~~~~~~~~~设置新的样式~~~~~~~~~~~~~~*/
+body {
+    margin: 0 8px;
+    padding: 0;
+}
+.hide {
+    display: none;
+}
+a {
+    text-decoration: none;
+}
+h1 {
+    font-size: 19px;
+    text-align: center;
+    margin: 20px 0;
+}
+.basicInfo {
+    padding: 0 15px;
+}
+.form-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0 auto 15px;
+}
+.form-item .item-title{
+    display: inline-block;
+    line-height: 30px;
+    font-size: 16px;
+    width: 78px;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+.form-item .item-title.text-justify {
+    text-align: justify;
+    text-align-last: justify;
+}
+.form-item .item-title.text-justify:after{
+    display: inline-block;
+    content: '';
+    overflow: hidden;
+    height: 0;
+}
+.form-item input, .form-item select, .textarea-item textarea{
+    padding-left: 10px;
+    border: 1px #E0E7EE solid;
+    border-radius: 5px;
+    height: 26px;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    font-size: 14px;
+}
+.form-item select {
+    height: 30px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.form-item.item-select {
+    position: relative;
+}
+.form-item .item-select-double {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    position: relative;
+}
+.form-item .item-select-double:first-child {
+    margin-right: 20px;
+}
+.form-item.item-select:after, .form-item .item-select-double:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border: #bbb solid 1px;
+    top: 10px;
+    right: 10px;
+    width: 6px;
+    height: 6px;
+    border-bottom: none;
+    border-left: none;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.textarea-item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto 15px;
+}
+.textarea-item p, .textarea-item textarea{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin: 0;
+}
+.textarea-item .item-title span {
+    margin-left: 4px;
+    font-size: 14px;
+    color: #999;
+}
+.textarea-item .note {
+    font-size: 12px;
+    color: #999;
+    margin: 6px 0 6px;
+}
+.textarea-item .note .attention-icon {
+    color: red;
+    margin-right: 5px;
+}
+.textarea-item textarea {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px #E0E7EE solid;
+    border-radius: 5px;
+    height: 150px;
+    resize : none;
+}
+.error-message {
+    font-size: 14px;
+    color: #ff5c43;
+    text-align: left;
+    min-height: 21px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.form-submit {
+    text-align: center;
+    padding: 0 15px;
+    margin-top: 10px;
+}
+.form-submit .submit-btn {
+    border: 0;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    display: inline-block;
+    background-color: #118bfc;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.icon-group {
+    margin: 20px 0;
+    text-align: center;
+}
+.icon-group .icon {
+    height: 110px;
+    width: 110px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.icon-group .icon:first-child {
+    margin-right: 20px;
+}
+.icon-group .icon-qr-code {
+    background:url("../icon/qr-code.png") 50% no-repeat;
+    background-size:100%;
+}
+.icon-group .icon-logo {
+    background:url("../icon/logo.png") 50% no-repeat;
+    background-size:100%;
+}
+.icon-group p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 auto;
+}
