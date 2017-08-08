@@ -3,8 +3,8 @@
   "description": "getting started with nodejs on sinacloud platform",
   "version": "0.0.1",
   "author": {
-    "name": "sae",
-    "email": "saemail@sina.cn"
+    "name": "jianghuan",
+    "email": "jianghuan03@meituan.com"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
