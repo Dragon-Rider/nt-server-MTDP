@@ -3,8 +3,6 @@
 ## 本地运行
 
 ```
-$ git clone https://github.com/sinacloud/nodejs-getting-started.git
-$ cd nodejs-getting-started
 $ npm install
 $ npm start
 ```
@@ -23,6 +21,10 @@ $ git push sinacloud master
 登陆sinacloud容器云的管理页面，在部署页面中，点击部署。
 
 部署完成之后，你就可以通过 http://$APPNAME.sinaapp.com 来访问你的应用了。
+
+数据库启用
+
+进入具体启动的云应用->数据库与缓存服务->共享性MySQL->导入本地neitui100.sql->清空数据表（为了每年分别区重）
 
 ## 更多示例
 

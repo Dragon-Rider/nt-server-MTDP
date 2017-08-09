@@ -8,6 +8,8 @@ var mysql   = require('mysql'),
     http = require('http'),
     util = require('util');
 
+const dbName = 'app_neitui100';
+
 var app = new express();
 
 app.set("view engine", 'ejs');
@@ -63,7 +65,6 @@ app.post('/addSentFlag', function(req, resData) {
 
 //百度内推数据发送页面，跳转提交成功页面。需要抽出来
 app.post('/ajax-form-baidu', function(req, res){
-    var dbName = 'app_neitui100';
     var tableName = 'baidu_intern_2017';
 
     var connection = createConnectSql();
@@ -103,11 +104,9 @@ app.post('/ajax-form-baidu', function(req, res){
 
 //数据发送页面，跳转提交成功页面
 app.post('/postdata', function(req, res){
-    var dbName = 'app_neitui100';
     var tableName = 'neitui100';
 
     var connection = createConnectSql();
-
     var querySQL = "SELECT * FROM `" + tableName + "` WHERE `phone` = " + req.body.phone;
     connection.connect();
     connection.query(querySQL, function (err1, res1) {
@@ -216,9 +215,3 @@ app.post('/upload', function(req, res){
 })
 
 app.listen(process.env.PORT || 5050);
-
-
-
-
-
-
