@@ -19,7 +19,7 @@ app.use(bodyParser.json());//use要写在所有路由之前，不然该功能就
 app.use(favicon(__dirname + '/public/icon/favicon.ico'));//解决favicon请求404的问题
 
 app.get('/form', routes.form);
-app.get('/form-baidu', routes.formBaidu);
+app.get('/form-MTDP', routes.formBaidu);
 app.get('/success', routes.success);
 app.get('/share', routes.share);
 app.get('/email', Email.email);
