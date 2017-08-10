@@ -161,10 +161,12 @@ $(function () {
             return false;
         }
 
+/*
         if (!input_school) {
             displayError(err_empty_school);
             return false;
         }
+*/
 
         if (!phoneRegx.test(input_phone)) {
             displayError(err_phone);

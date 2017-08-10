@@ -8,11 +8,7 @@ blockquote,body,button,dd,dl,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend
 h1 {
     font-size: 19px;
     text-align: center;
-    margin: 20px 0;
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.67em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+    margin: 20px 0 20px;
     font-weight: bold;
 }
 .mark {
