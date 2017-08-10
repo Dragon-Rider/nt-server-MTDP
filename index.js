@@ -187,7 +187,7 @@ app.get('/datadisplay', function (req, res) {
 });
 
 //测试页面
-app.get('/test', function (req, res) {
+app.get('/uaCheck', function (req, res) {
     //这个页面判断用户来源
     res.render("test.ejs",{'data': req.headers});
 });

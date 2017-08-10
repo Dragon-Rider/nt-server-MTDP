@@ -1,10 +1,10 @@
 
 function ajaxRouters(app) {
-    app.post('/zhaopin/test', function(req, res) {
+    app.get('/test', function(req, res) {
         res.send(require('./json/test'));
     });
 
-    app.get('/toTest', function(req, res) {
+    app.get('/zhaopin/toTest', function(req, res) {
         console.log("toTest");
         //res.redirect("#/register");
         res.redirect(302, 'http://www.baidu.com');
@@ -13,3 +13,4 @@ function ajaxRouters(app) {
 };
 
 module.exports = ajaxRouters;
+
