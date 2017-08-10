@@ -64,7 +64,6 @@
             <div class="gap"></div>
             <input placeholder="电子邮箱" value="" name="email" class="J_email">
         </div>
-
         <!--毕业院校
         <div class="inputDiv">
             <div class="iconDiv">
@@ -80,8 +79,8 @@
             </div>
             <div class="gap"></div>
             <select class="J_Group" placeholder="推荐事业群" name="interestGroupId">
-                <option class="groupDefault" value="1">推荐事业群</option>
-                <option value="1">都喜欢</option>
+                <option class="groupDefault" value="0">推荐事业群</option>
+                <option value="0">都喜欢</option>
                 <option value="2">餐饮平台</option>
                 <option value="3">点评平台及综合事业群</option>
                 <option value="4">广告平台</option>
@@ -98,29 +97,68 @@
             </div>
             <div class="gap"></div>
             <select class="J_Job" placeholder="推荐事业群" name="jobId">
-                <option data-regularId='8387' data-internId='8388' class="groupDefault">应聘岗位</option>
-                <option data-regularId='8387' data-internId='8388'>自然语言处理开发工程师</option>
-                <option data-regularId='8380' data-internId='8381'>数据开发工程师</option>
-                <option data-regularId='8383' data-internId='8384'>测试开发工程师</option>
-                <option data-regularId='8385' data-internId='8389'>机器学习/数据挖掘算法工程师</option>
-                <option data-regularId='8372' data-internId='8373'>后台开发工程师</option>
-                <option data-regularId='8378' data-internId='8379'>Android开发工程师</option>
-                <option data-regularId='8376' data-internId='8377'>iOS开发工程师</option>
-                <option data-regularId='8374' data-internId='8375'>Web前端开发工程师</option>
-            <!-- 实习生多招的岗位 -->
-                <option class="only-intern hide" data-internId='8436'>运维工程师</option>
-           <!-- 应届生多招的岗位 -->
-                <option class="only-regular" data-regularId='8454'>财务专员</option>
+                <!-- 技术研发 -->
+                <option data-regularId='0' class="groupDefault">应聘岗位</option>
+                <option data-regularId='9016' >【2018届】Android开发工程师—厦门</option>
+                <option data-regularId='9015' >【2018届】IOS开发工程师—厦门</option>
+                <option data-regularId='9014' >【2018届】 数据库开发工程师-厦门</option>
+                <option data-regularId='9013' >【2018届】 测试开发工程师-厦门</option>
+                <option data-regularId='9012' >【2018届】机器学习/数据挖掘算法工程师-厦门</option>
+                <option data-regularId='9010' >【2018届】 Web前端开发工程师-厦门</option>
+                <option data-regularId='8979' >【2018届】SRE工程师-上海,北京</option>
+                <option data-regularId='8972' >【2018届】运维开发工程师-北京</option>
+                <option data-regularId='8973' >【2018届】运维开发工程师-上海</option>
+                <option data-regularId='9009' >【2018届】 数据库开发工程师-上海</option>
+                <option data-regularId='9008' >【2018届】 后台开发工程师-厦门</option>
+                <option data-regularId='8987' >【2018届】机器学习／数据挖掘算法工程师-北京</option>
+                <option data-regularId='8955' >【2018届】Web前端开发工程师-北京</option>
+                <option data-regularId='8978' >【2018届】运筹优化研发工程师-北京</option>
+                <option data-regularId='8951' >【2018届】后台开发工程师—上海</option>
+                <option data-regularId='8975' >【2018届】数据库开发工程师-北京</option>
+                <option data-regularId='8966' >【2018届】iOS开发工程师-深圳</option>
+                <option data-regularId='8967' >【2018届】Android开发工程师-北京</option>
+                <option data-regularId='8962' >【2018届】iOS开发工程师-北京</option>
+                <option data-regularId='8971' >【2018届】Android开发工程师-深圳</option>
+                <option data-regularId='8980' >【2018届】测试开发工程师-北京</option>
+                <option data-regularId='8984' >【2018届】测试开发工程师-深圳</option>
+                <option data-regularId='8961' >【2018届】Web前端开发工程师-深圳</option>
+                <option data-regularId='8956' >【2018届】Web前端开发工程师-上海</option>
+                <option data-regularId='8988' >【2018届】机器学习／数据挖掘算法工程师-上海</option>
+                <option data-regularId='8950' >【2018届】后台开发工程师—北京</option>
+                <option data-regularId='8968' >【2018届】Android开发工程师-上海</option>
+                <option data-regularId='8954' >【2018届】后台开发工程师-深圳</option>
+                <option data-regularId='8986' >【2018届】自然语言处理开发工程师-上海</option>
+                <option data-regularId='8963' >【2018届】iOS开发工程师-上海</option>
+                <option data-regularId='8981' >【2018届】测试开发工程师-上海</option>
+                <option data-regularId='8985' >【2018届】自然语言处理开发工程师-北京</option>
+                <option data-regularId='8970' >【2018届】Android开发工程师-成都</option>
+                <option data-regularId='8953' >【2018届】后台开发工程师-成都</option>
+                <option data-regularId='8983' >【2018届】测试开发工程师-成都</option>
+                <option data-regularId='8960' >【2018届】Web前端开发工程师-成都</option>
+                <option data-regularId='8965' >【2018届】iOS开发工程师-成都</option>
+                <option data-regularId='8974' >【2018届】安全工程师-上海,北京</option>
 
-            <!-- 不招
-                <option value="7129">大数据平台开发工程师（2017届）</option>
-                <option value="7082">安全工程师（2017届）</option>
-                <option value="7081">运维工程师（2017届）</option>
-                <option value="7109">系统工程师 （2017届）</option>
-                <option value="7091">助理产品经理（2017届）</option>
-                <option value="7085">商业分析专员（2017届）</option>
-                <option value="7092">产品运营专员（2017届）</option>
-            -->
+                <!-- 产品策划 -->
+                <option data-regularId='9011' >【2018届】助理产品经理—厦门</option>
+                <option data-regularId='8989' >【2018届】助理产品经理-北京</option>
+                <option data-regularId='8990' >【2018届】助理产品经理-上海</option>
+
+                <!-- 运营 -->
+                <option data-regularId='8992' >【2018届】产品运营专员-北京</option>
+                <option data-regularId='8994' >【2018届】产品运营专员-厦门</option>
+                <option data-regularId='8993' >【2018届】产品运营专员-上海</option>
+
+                <!-- 设计 -->
+                <option data-regularId='9003' >【2018届】视觉设计师-上海,北京</option>
+                <option data-regularId='9002' >【2018届】营销设计师-上海,北京</option>
+                <option data-regularId='9001' >【2018届】交互设计师-上海,北京</option>
+                <option data-regularId='8997' >【2018届】用户研究员-北京</option>
+
+                <!-- 商业分析 -->
+                <option data-regularId='9007' >【2018届】 商业分析专员-上海</option>
+                <option data-regularId='8995' >【2018届】商业分析专员-北京</option>
+
+                <!-- 其他 -->
             </select>
         </div>
     </div>
