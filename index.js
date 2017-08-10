@@ -25,9 +25,9 @@ app.get('/share', pageRouters.share);
 app.get('/email', Email.email);
 ajaxRouters(app);
 
-function createConnectSql(){  //优化： util.js
+function createConnectSql(){  //优化：放入config文件中
     return mysql.createConnection({
-        host     : 172.16.87.24,
+        host     : '172.16.87.24',
         port     : 3306,
         user     : 'neitui100',
         password : 'neitui-100',
