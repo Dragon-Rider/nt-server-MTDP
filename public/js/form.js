@@ -33,7 +33,7 @@ $(function () {
             name: $('.J_name').val(),
             phone: $('.J_phone').val(),
             email: $('.J_email').val(),
-            school: $('.J_school').val() || '',
+            /*school: $('.J_school').val() || '',*/
             interestGroupId: $('.J_Group').val() || '1',
             jobId: jobId || '7074',
             studentType: studentType
@@ -91,7 +91,7 @@ $(function () {
         var input_name = $('.J_name').val().trim(),
             input_phone = $('.J_phone').val().trim(),
             input_email = $('.J_email').val().trim(),
-            input_school = $('.J_school').val().trim(),
+            /*input_school = $('.J_school').val().trim(),*/
             input_job = $('.J_Job').val().trim();
 
         if ($(this).attr("class") === "J_name") {
@@ -121,7 +121,7 @@ $(function () {
                 $('.J_error').addClass('hide');
             }
         }
-
+/*
         if ($(this).attr("class") === "J_school") {
             if (!input_school) {
                 displayError(err_empty_school);
@@ -129,7 +129,7 @@ $(function () {
                 $('.J_error').addClass('hide');
             }
         }
-
+*/
         if ($(this).attr("class") === "J_Job") {
             if ($('.J_Job .groupDefault').val() === input_job) {
                 displayError(err_empty_name);
@@ -143,7 +143,7 @@ $(function () {
         var input_name = $('.J_name').val().trim(),
             input_phone = $('.J_phone').val().trim(),
             input_email = $('.J_email').val().trim(),
-            input_school = $('.J_school').val().trim(),
+            /*input_school = $('.J_school').val().trim(),*/
             input_job = $('.J_Job').val().trim();
 
         if (!input_name) {
