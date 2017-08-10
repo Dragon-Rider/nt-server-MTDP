@@ -27,11 +27,11 @@ ajaxRouters(app);
 
 function createConnectSql(){  //优化： util.js
     return mysql.createConnection({
-        host     : process.env.MYSQL_HOST,
-        port     : process.env.MYSQL_PORT,
-        user     : process.env.ACCESSKEY,
-        password : process.env.SECRETKEY,
-        database : 'app_' + process.env.APPNAME
+        host     : 172.16.87.24,
+        port     : 3306,
+        user     : 'neitui100',
+        password : 'neitui-100',
+        database : 'app_neitui100'
     });
 }
 
