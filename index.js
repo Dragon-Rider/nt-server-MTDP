@@ -1,28 +1,29 @@
-var mysql   = require('mysql'),
+var mysql   = require('mysql'),  // 优化点：可以换成import，引入babel
     express = require('express'),
-    routes  = require("./routes"),
     Email   = require("./routes/email.js"),
     bodyParser = require('body-parser'),
     favicon = require('serve-favicon'),
     formidable = require('formidable'),
     http = require('http'),
     util = require('util');
-
-const dbName = 'app_neitui100';
-
 var app = new express();
 
-app.set("view engine", 'ejs');
+const ajaxRouters = require("./ajax/");
+const pageRouters  = require("./routes");
+const dbName = 'app_neitui100'; // 数据库名字
+
+app.set("view engine", 'ejs'); // 设置express模板引擎，和路径为public文件夹
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());//use要写在所有路由之前，不然该功能就没有被启用
-app.use(favicon(__dirname + '/public/icon/favicon.ico'));//解决favicon请求404的问题
+app.use(bodyParser.json()); // use要写在所有路由之前，不然该功能就没有被启用
+app.use(favicon(__dirname + '/public/icon/favicon.ico'));// 解决favicon请求404的问题
 
-app.get('/form', routes.form);
-app.get('/form-MTDP', routes.formBaidu);
-app.get('/success', routes.success);
-app.get('/share', routes.share);
+app.get('/form', pageRouters.form); // 优化点：routes路由，可收进routes文件夹
+app.get('/form-MTDP', pageRouters.formBaidu);
+app.get('/success', pageRouters.success);
+app.get('/share', pageRouters.share);
 app.get('/email', Email.email);
+ajaxRouters(app);
 
 function createConnectSql(){
     return mysql.createConnection({
@@ -33,6 +34,7 @@ function createConnectSql(){
         database : 'app_' + process.env.APPNAME
     });
 }
+
 //get post data from email page
 //set each ele in arr from request "sent flag"
 app.post('/addSentFlag', function(req, resData) {
@@ -192,26 +194,25 @@ app.get('/test', function (req, res) {
 
 
 app.post('/upload', function(req, res){
-  if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
-    //创建表单上传
-    var form = new formidable.IncomingForm();
-    //设置编辑
-    form.encoding = 'utf-8';
-    //设置文件存储路径
-    form.uploadDir = "uploads/images/";
-    //保留后缀
-    form.keepExtensions = true;
-    //设置单文件大小限制
-    form.maxFieldsSize = 2 * 1024 * 1024;
-    //form.maxFields = 1000;  设置所有文件的大小总和
+    if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
+        //创建表单上传
+        var form = new formidable.IncomingForm();
+        //设置编辑
+        form.encoding = 'utf-8';
+        //设置文件存储路径
+        form.uploadDir = "uploads/images/";
+        //保留后缀
+        form.keepExtensions = true;
+        //设置单文件大小限制
+        form.maxFieldsSize = 2 * 1024 * 1024;
+        //form.maxFields = 1000;  设置所有文件的大小总和
 
-    form.parse(req, function(err, fields, files) {
-          res.redirect("/success") ;
-    });
+        form.parse(req, function(err, fields, files) {
+              res.redirect("/success") ;
+        });
 
-    return;
-}
-
-})
+        return;
+    }
+});
 
 app.listen(process.env.PORT || 5050);
