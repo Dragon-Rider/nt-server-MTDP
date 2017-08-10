@@ -116,13 +116,21 @@ h1 {
     color: #377ED2;
 }
 
-.recom-processImg{
+.recom-img {
     height:60px;
     width:60px;
     margin-left:auto;
     margin-right:auto;
+
+}
+
+.recom-processImg{
     background:url("../icon/process.png") 50% no-repeat;
     background-size:100%
 }
 
+.recom-successImg{
+    background:url("../icon/success.png") 50% no-repeat;
+    background-size:100%
+}
 
