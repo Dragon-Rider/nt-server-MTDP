@@ -36,7 +36,7 @@ $(function () {
             /*school: $('.J_school').val() || '',*/
             interestGroupId: $('.J_Group').val() || '1',
             jobId: jobId || '7074',
-            studentType: studentType
+            studentType: 1 /*studentType*/
         };
         requestSending = true;
         $.ajax({
