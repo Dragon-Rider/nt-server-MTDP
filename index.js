@@ -1,4 +1,4 @@
-var mysql   = require('mysql'),  // 优化点：可以换成import，引入babel
+var mysql   = require('mysql'),  // 优化：可以换成import，引入babel
     express = require('express'),
     Email   = require("./routes/email.js"),
     bodyParser = require('body-parser'),
@@ -18,20 +18,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json()); // use要写在所有路由之前，不然该功能就没有被启用
 app.use(favicon(__dirname + '/public/icon/favicon.ico'));// 解决favicon请求404的问题
 
-app.get('/form', pageRouters.form); // 优化点：routes路由，可收进routes文件夹
+app.get('/form', pageRouters.form); // 优化：routes路由，可收进routes文件夹
 app.get('/form-MTDP', pageRouters.formBaidu);
 app.get('/success', pageRouters.success);
 app.get('/share', pageRouters.share);
 app.get('/email', Email.email);
 ajaxRouters(app);
 
-function createConnectSql(){
+function createConnectSql(){  //优化： util.js
     return mysql.createConnection({
         host     : process.env.MYSQL_HOST,
         port     : process.env.MYSQL_PORT,
         user     : process.env.ACCESSKEY,
         password : process.env.SECRETKEY,
-        database : 'app_' + process.env.APPNAME
+        database : 'app_neitui100' /*+ process.env.APPNAME*/
     });
 }
 
@@ -215,4 +215,4 @@ app.post('/upload', function(req, res){
     }
 });
 
-app.listen(process.env.PORT || 5050);
+app.listen(8080);  // 优化：这里把端口换成80，加https证书

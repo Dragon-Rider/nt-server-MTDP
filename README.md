@@ -7,7 +7,7 @@ $ npm install
 $ npm start
 ```
 
-现在，本示例应用已经跑在了你的 localhost:5050 端口上了。
+现在，本示例应用已经跑在了你的 localhost:8080 端口上了。
 
 ## 部署到sinacloud
 
@@ -25,6 +25,11 @@ $ git push sinacloud master
 数据库启用
 
 进入具体启动的云应用->数据库与缓存服务->共享性MySQL->导入本地neitui100.sql->清空数据表（为了每年分别区重）
+
+## 部署到美团云
+1. 首先，登录美团云
+2. 进入开发文件夹，clone代码文件
+3. npm start
 
 ## 更多示例
 
