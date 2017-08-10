@@ -215,4 +215,4 @@ app.post('/upload', function(req, res){
     }
 });
 
-app.listen(5050);  // 优化：这里把端口换成80，加https证书
+app.listen(80);  // 优化：这里把端口换成80，加https证书
