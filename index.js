@@ -31,7 +31,7 @@ function createConnectSql(){  //优化： util.js
         port     : process.env.MYSQL_PORT,
         user     : process.env.ACCESSKEY,
         password : process.env.SECRETKEY,
-        database : 'app_neitui100' /*+ process.env.APPNAME*/
+        database : 'app_' + process.env.APPNAME
     });
 }
 
