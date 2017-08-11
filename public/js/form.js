@@ -23,17 +23,8 @@ $(function () {
             return;
         }
         var $selectedOption = $('.J_Job').find("option").not(function () { return !this.selected }),
-            jobId = 0,
+            jobId = $selectedOption.data('regularid'),
             studentType = 1;
-
-
-        if ($('.J_regular').prop('checked')) {
-            jobId = $selectedOption.data('regularid');
-        } else {
-            jobId = $selectedOption.data('internid');
-            studentType = 2;
-        }
-
 
         var postdata = {
             name: $('.J_name').val(),
@@ -44,7 +35,6 @@ $(function () {
             jobId: jobId || '8956',
             studentType: 1 /*studentType*/
         };
-
         requestSending = true;  // 优化： 这里可以抽离postData function
         $.ajax({
             type: 'post',
