@@ -44,8 +44,7 @@ $(function () {
             jobId: jobId || '7074',
             studentType: 1 /*studentType*/
         };
-        console.log(postdata)
-        return;
+
         requestSending = true;  // 优化： 这里可以抽离postData function
         $.ajax({
             type: 'post',

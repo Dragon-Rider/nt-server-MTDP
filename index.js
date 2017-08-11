@@ -23,6 +23,7 @@ app.get('/form-MTDP', pageRouters.formBaidu);
 app.get('/success', pageRouters.success);
 app.get('/share', pageRouters.share);
 app.get('/email', Email.email);
+
 ajaxRouters(app);
 
 function createConnectSql(){  //优化：放入config文件中
