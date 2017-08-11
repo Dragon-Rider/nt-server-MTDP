@@ -1,6 +1,7 @@
-$(function () {
-    var requestSending = false;  //用户是否点击提交按钮
+ var requestSending = false;  //用户是否点击提交按钮
 
+$(function () {
+    /*
     $($('#form1 .radioGourp input')[0]).on('click', function () {
         //is regular
         $('.only-intern').addClass('hide');
@@ -11,7 +12,9 @@ $(function () {
         $('.only-regular').addClass('hide');
         $('.only-intern').removeClass('hide');
     });
-    $('.J_submit').on('click', function () {
+    */
+
+    $('.J_submit').on('click', function () {  //优化：bindEvents统一function
         if (!validateForm()) {
             return;
         }
@@ -23,12 +26,15 @@ $(function () {
             jobId = 0,
             studentType = 1;
 
+        /*
         if ($('.J_regular').prop('checked')) {
             jobId = $selectedOption.data('regularid');
         } else {
             jobId = $selectedOption.data('internid');
             studentType = 2;
         }
+        */
+
         var postdata = {
             name: $('.J_name').val(),
             phone: $('.J_phone').val(),
@@ -38,7 +44,9 @@ $(function () {
             jobId: jobId || '7074',
             studentType: 1 /*studentType*/
         };
-        requestSending = true;
+        console.log(postdata)
+        return;
+        requestSending = true;  // 优化： 这里可以抽离postData function
         $.ajax({
             type: 'post',
             url: '/postdata',
@@ -81,11 +89,38 @@ $(function () {
         err_empty_mail = '邮箱地址不可为空!',
         err_empty_school = '学校不可为空!';
 
-    $('#form1 .J_Job').change(function () {
+    $('#form1 .J_Job').change(function (e) {
+        // 如果选择的工作不为0，则隐藏警告
         if ($('.J_Job .groupDefault').val() !== $(this).val() && $('.J_error').text() == err_job) {
             $('.J_error').addClass('hide');
         }
+
+        //切换工作改变部门
+        var $this = $(this),
+            $selectedOption = $(this).find("option").not(function () { return !this.selected }),
+            selectedGroupId = $selectedOption.data('interestgroupid') || 0;
+
+        $.ajax({
+            type: 'get',
+            url: '/ajax/jobMatchSingleBu',
+            data: {'groupId' : selectedGroupId},
+            success: function (res) {
+                oGroup = res || {};
+                console.log(oGroup);
+                $('.J_Group').empty().append('<option value='+oGroup.value+'>'+oGroup.text+'</option>');
+            },
+            error: function (e) {
+                // todo 错误处理
+                console.log(e)
+                Toast('暂无网络连接，请检查网络设置', '', 2000, '', true);
+            }
+        });
+
+        $('.J_Group').empty().append('<option value="1">都喜欢</option>');
     });
+
+
+
 
     $('#form1 .inputDiv input').blur(function () {
         var input_name = $('.J_name').val().trim(),
@@ -121,7 +156,8 @@ $(function () {
                 $('.J_error').addClass('hide');
             }
         }
-/*
+        /*
+        // 不需要填写学校
         if ($(this).attr("class") === "J_school") {
             if (!input_school) {
                 displayError(err_empty_school);
@@ -129,7 +165,8 @@ $(function () {
                 $('.J_error').addClass('hide');
             }
         }
-*/
+        */
+
         if ($(this).attr("class") === "J_Job") {
             if ($('.J_Job .groupDefault').val() === input_job) {
                 displayError(err_empty_name);

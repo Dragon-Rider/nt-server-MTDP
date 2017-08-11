@@ -4,6 +4,19 @@ function ajaxRouters(app) {
         res.send(require('./json/test'));
     });
 
+    //根据groupId返回对应可选事业群
+    app.get('/ajax/jobMatchSingleBu', function(req, res) {
+        var ajaxData = require('./json/jobMatchSingleBu'),
+            allAroups = ajaxData.data,
+            reqData = req.query,
+            groupId = reqData.groupId;
+
+        var oGroup = allAroups.find(function (item, index, arr) {
+                return item.value == groupId;
+            })
+        res.send(oGroup);
+    });
+
     app.get('/zhaopin/toTest', function(req, res) {
         console.log("toTest");
         //res.redirect("#/register");

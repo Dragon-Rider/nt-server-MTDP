@@ -33,7 +33,7 @@ $ git push sinacloud master
 
 #####注意， 如果遇到端口号被占用，还需要kill占用端口号的进程，操作步骤如下：
 
-1. 找到占用端口号的进程：fuser -n tcp 80
+1. 找到占用端口号的进程：fuser -n tcp 80, 如果是mac系统使用命令：lsof -i tcp:80
 2. 关闭进程：sudo kill pid
 
 ## 更多示例
