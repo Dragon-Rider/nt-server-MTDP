@@ -1,5 +1,5 @@
 function form (req, res) {
-    res.render("form");
+    res.render("form");  //优化： 加beta页，切换
 }
 
 function formBaidu (req, res) {

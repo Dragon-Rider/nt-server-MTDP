@@ -13,7 +13,8 @@ function ajaxRouters(app) {
 
         var oGroup = allAroups.find(function (item, index, arr) {
                 return item.value == groupId;
-            })
+            });
+
         res.send(oGroup);
     });
 
