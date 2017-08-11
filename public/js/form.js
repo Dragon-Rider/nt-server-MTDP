@@ -26,14 +26,14 @@ $(function () {
             jobId = 0,
             studentType = 1;
 
-        /*
+
         if ($('.J_regular').prop('checked')) {
             jobId = $selectedOption.data('regularid');
         } else {
             jobId = $selectedOption.data('internid');
             studentType = 2;
         }
-        */
+
 
         var postdata = {
             name: $('.J_name').val(),
@@ -41,7 +41,7 @@ $(function () {
             email: $('.J_email').val(),
             /*school: $('.J_school').val() || '',*/
             interestGroupId: $('.J_Group').val() || '1',
-            jobId: jobId || '7074',
+            jobId: jobId || '8956',
             studentType: 1 /*studentType*/
         };
 
