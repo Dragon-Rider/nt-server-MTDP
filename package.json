@@ -3,7 +3,8 @@
     "description": "getting started with nodejs on sinacloud platform",
     "version": "0.0.1",
     "scripts": {
-        "start": "node index.js"
+        "dev": "node index.js",
+        "start": "nohub node index.js &"
     },
     "author": {
         "name": "jianghuan",
