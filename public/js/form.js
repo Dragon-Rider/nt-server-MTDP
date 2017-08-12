@@ -1,4 +1,4 @@
- var requestSending = false;  //用户是否点击提交按钮
+var requestSending = false;  //用户是否点击提交按钮
 
 $(function () {
     $('.J_submit').on('click', function () {  //优化：bindEvents统一function

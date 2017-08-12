@@ -19,7 +19,7 @@ $(function () {
 
 function bindEvents() {
     /*
-    $('#form1 .J-job').change(function () {
+    $('#form1 .J-job').change(function () {  //优化： 用J-class，不用id
         if ($('.J-job-default').val() !== $(this).val() && $('.J-error').text() == errJobText) {
             $('.J-error').addClass('hide');
         }

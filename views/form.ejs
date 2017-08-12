@@ -21,174 +21,178 @@
     </script>
 </head>
 <body>
-<form id="form1" name="form1" class="J_form" method="post" action="postdata" >
-    <h1>美团点评2018届校招内推</h1>
-    <div class="basicInfo">
-        <div class="inputDiv">
-            <div class="iconDiv">
-                <img class="icon" src="./icon/name.png">
+    <form id="form1" name="form1" class="J_form form-recom" method="post" action="postdata" >
+        <h1>美团点评2018届校招内推</h1>
+        <div class="basicInfo">
+            <div class="inputDiv">
+                <div class="iconDiv">
+                    <img class="icon" src="./icon/name.png">
+                </div>
+                <div class="gap"></div>
+                <input placeholder="被推荐人姓名" value="" name="name" class="J_name">
             </div>
-            <div class="gap"></div>
-            <input placeholder="被推荐人姓名" value="" name="name" class="J_name">
-        </div>
 
-        <div class="inputDiv">
-            <div class="iconDiv">
-                <img class="icon" src="./icon/mobile.png">
+            <div class="inputDiv">
+                <div class="iconDiv">
+                    <img class="icon" src="./icon/mobile.png">
+                </div>
+                <div class="gap"></div>
+                <input placeholder="电话号码" value="" name="phone" class="J_phone">
             </div>
-            <div class="gap"></div>
-            <input placeholder="电话号码" value="" name="phone" class="J_phone">
-        </div>
 
-        <div class="inputDiv">
-            <div class="iconDiv">
-                <img class="icon" src="./icon/email.png">
+            <div class="inputDiv">
+                <div class="iconDiv">
+                    <img class="icon" src="./icon/email.png">
+                </div>
+                <div class="gap"></div>
+                <input placeholder="电子邮箱" value="" name="email" class="J_email">
             </div>
-            <div class="gap"></div>
-            <input placeholder="电子邮箱" value="" name="email" class="J_email">
-        </div>
-        <!--毕业院校
-        <div class="inputDiv">
-            <div class="iconDiv">
-                <img class="icon" src="./icon/group.png">
+            <!--毕业院校
+            <div class="inputDiv">
+                <div class="iconDiv">
+                    <img class="icon" src="./icon/group.png">
+                </div>
+                <div class="gap"></div>
+                <input placeholder="毕业学校" value="" name="school" class="J_school">
             </div>
-            <div class="gap"></div>
-            <input placeholder="毕业学校" value="" name="school" class="J_school">
-        </div>
-        -->
-
-        <!-- 工作城市
-        <div class="inputDiv">
-            <div class="iconDiv">
-                <img class="icon" src="./icon/globe.png">
-            </div>
-            <div class="gap"></div>
-            <select class="J_City" placeholder="意向工作城市" name="interestCityId">
-                <option class="cityDefault" value="0">意向工作城市</option>
-                <option value="0">北京</option>
-                <option value="1">上海</option>
-                <option value="2">深圳</option>
-                <option value="3">成都</option>
-                <option value="4">厦门</option>
-            </select>
-        </div>
-        -->
-
-        <div class="inputDiv">
-            <div class="iconDiv">
-                <img class="icon" src="./icon/group.png">
-            </div>
-            <div class="gap"></div>
-            <select class="J_Job" placeholder="推荐事业群" name="jobId">
-                <!-- 技术研发 -->
-                <option data-regularId='0' class="groupDefault">应聘岗位</option>
-                <option data-regularId='9016' >Android开发工程师—厦门</option>
-                <option data-regularId='9015' >IOS开发工程师—厦门</option>
-                <option data-regularId='9014' data-interestGroupId='7' >数据库开发工程师-厦门</option>
-                <option data-regularId='9013' data-interestGroupId='7' >测试开发工程师-厦门</option>
-                <option data-regularId='9012' data-interestGroupId='7' >机器学习/数据挖掘算法工程师-厦门</option>
-                <option data-regularId='9010' >Web前端开发工程师-厦门</option>
-                <option data-regularId='8979' data-interestGroupId='5' >SRE工程师-上海,北京</option>
-                <option data-regularId='8972' >运维开发工程师-北京</option>
-                <option data-regularId='8973' data-interestGroupId='5' >运维开发工程师-上海</option>
-                <option data-regularId='9009' >数据库开发工程师-上海</option>
-                <option data-regularId='9008' >后台开发工程师-厦门</option>
-                <option data-regularId='8987' >机器学习／数据挖掘算法工程师-北京</option>
-                <option data-regularId='8955' >Web前端开发工程师-北京</option>
-                <option data-regularId='8978' data-interestGroupId='13' >运筹优化研发工程师-北京</option>
-                <option data-regularId='8951' >后台开发工程师—上海</option>
-                <option data-regularId='8975' >数据库开发工程师-北京</option>
-                <option data-regularId='8966' data-interestGroupId='14' >iOS开发工程师-深圳</option>
-                <option data-regularId='8967' >Android开发工程师-北京</option>
-                <option data-regularId='8962' >iOS开发工程师-北京</option>
-                <option data-regularId='8971' data-interestGroupId='14' >Android开发工程师-深圳</option>
-                <option data-regularId='8980' >测试开发工程师-北京</option>
-                <option data-regularId='8984' data-interestGroupId='14' >测试开发工程师-深圳</option>
-                <option data-regularId='8961' data-interestGroupId='14' >Web前端开发工程师-深圳</option>
-                <option data-regularId='8956' >Web前端开发工程师-上海</option>
-                <option data-regularId='8988' >机器学习／数据挖掘算法工程师-上海</option>
-                <option data-regularId='8950' >后台开发工程师—北京</option>
-                <option data-regularId='8968' >Android开发工程师-上海</option>
-                <option data-regularId='8954' data-interestGroupId='14' >后台开发工程师-深圳</option>
-                <option data-regularId='8986' data-interestGroupId='5' >自然语言处理开发工程师-上海</option>
-                <option data-regularId='8963' >iOS开发工程师-上海</option>
-                <option data-regularId='8981' >测试开发工程师-上海</option>
-                <option data-regularId='8985' >自然语言处理开发工程师-北京</option>
-                <option data-regularId='8970' data-interestGroupId='1' >Android开发工程师-成都</option>
-                <option data-regularId='8953' data-interestGroupId='1' >后台开发工程师-成都</option>
-                <option data-regularId='8983' data-interestGroupId='1' >测试开发工程师-成都</option>
-                <option data-regularId='8960' data-interestGroupId='1' >Web前端开发工程师-成都</option>
-                <option data-regularId='8965' data-interestGroupId='1' >iOS开发工程师-成都</option>
-                <option data-regularId='8974' data-interestGroupId='5' >安全工程师-上海,北京</option>
-
-                <!-- 产品策划 -->
-                <option data-regularId='9011' data-interestGroupId='12' >助理产品经理—厦门</option>
-                <option data-regularId='8989' >助理产品经理-北京</option>
-                <option data-regularId='8990' >助理产品经理-上海</option>
-
-                <!-- 运营 -->
-                <option data-regularId='8992' >产品运营专员-北京</option>
-                <option data-regularId='8994' data-interestGroupId='12' >产品运营专员-厦门</option>
-                <option data-regularId='8993' >产品运营专员-上海</option>
-
-                <!-- 设计 -->
-                <option data-regularId='9003' >视觉设计师-上海,北京</option>
-                <option data-regularId='9002' >营销设计师-上海,北京</option>
-                <option data-regularId='9001' >交互设计师-上海,北京</option>
-                <option data-regularId='8997' data-interestGroupId='7' >用户研究员-北京</option>
-
-                <!-- 商业分析 -->
-                <option data-regularId='9007' >商业分析专员-上海</option>
-                <option data-regularId='8995' >商业分析专员-北京</option>
-
-                <!-- 其他 -->
-            </select>
-        </div>
-
-        <!-- 事业群 -->
-        <div class="inputDiv hide">
-            <div class="iconDiv">
-                <img class="icon" src="./icon/group.png">
-            </div>
-            <div class="gap"></div>
-            <select class="J_Group" placeholder="推荐事业群" name="interestGroupId">
-                <option value="0">都喜欢</option>
-            <!--
-                <option class="groupDefault" value="0">推荐事业群</option>
-                <option value="0">都喜欢</option>
-                <option value="1">餐饮生态平台</option>
-                <option value="3">点评平台</option>
-                <option value="4">广告平台</option>
-                <option value="5">技术工程及基础数据平台</option>
-                <option value="6">金融服务平台</option>
-                <option value="7">美团平台及酒旅事业群</option>
-                <option value="8">客服平台部</option>    // 展示没看见有客服平台，这个value待确认
-                <option value="12">企业平台</option>
-                <option value="13">外卖配送事业群</option>
-                <option value="14">综合事业群</option>
             -->
-            </select>
+
+            <!-- 工作城市
+            <div class="inputDiv">
+                <div class="iconDiv">
+                    <img class="icon" src="./icon/globe.png">
+                </div>
+                <div class="gap"></div>
+                <select class="J_City" placeholder="意向工作城市" name="interestCityId">
+                    <option class="cityDefault" value="0">意向工作城市</option>
+                    <option value="0">北京</option>
+                    <option value="1">上海</option>
+                    <option value="2">深圳</option>
+                    <option value="3">成都</option>
+                    <option value="4">厦门</option>
+                </select>
+            </div>
+            -->
+            <div class="inputDiv">
+                <div class="iconDiv">
+                    <img class="icon" src="./icon/group.png">
+                </div>
+                <div class="gap"></div>
+                <select class="J_Job" placeholder="推荐事业群" name="jobId">
+                    <!-- 技术研发 -->
+                    <option data-regularId='0' class="groupDefault">应聘岗位</option>
+                    <option data-regularId='9016' >Android开发工程师—厦门</option>
+                    <option data-regularId='9015' >IOS开发工程师—厦门</option>
+                    <option data-regularId='9014' data-interestGroupId='7' >数据库开发工程师-厦门</option>
+                    <option data-regularId='9013' data-interestGroupId='7' >测试开发工程师-厦门</option>
+                    <option data-regularId='9012' data-interestGroupId='7' >机器学习/数据挖掘算法工程师-厦门</option>
+                    <option data-regularId='9010' >Web前端开发工程师-厦门</option>
+                    <option data-regularId='8979' data-interestGroupId='5' >SRE工程师-上海,北京</option>
+                    <option data-regularId='8972' >运维开发工程师-北京</option>
+                    <option data-regularId='8973' data-interestGroupId='5' >运维开发工程师-上海</option>
+                    <option data-regularId='9009' >数据库开发工程师-上海</option>
+                    <option data-regularId='9008' >后台开发工程师-厦门</option>
+                    <option data-regularId='8987' >机器学习／数据挖掘算法工程师-北京</option>
+                    <option data-regularId='8955' >Web前端开发工程师-北京</option>
+                    <option data-regularId='8978' data-interestGroupId='13' >运筹优化研发工程师-北京</option>
+                    <option data-regularId='8951' >后台开发工程师—上海</option>
+                    <option data-regularId='8975' >数据库开发工程师-北京</option>
+                    <option data-regularId='8966' data-interestGroupId='14' >iOS开发工程师-深圳</option>
+                    <option data-regularId='8967' >Android开发工程师-北京</option>
+                    <option data-regularId='8962' >iOS开发工程师-北京</option>
+                    <option data-regularId='8971' data-interestGroupId='14' >Android开发工程师-深圳</option>
+                    <option data-regularId='8980' >测试开发工程师-北京</option>
+                    <option data-regularId='8984' data-interestGroupId='14' >测试开发工程师-深圳</option>
+                    <option data-regularId='8961' data-interestGroupId='14' >Web前端开发工程师-深圳</option>
+                    <option data-regularId='8956' >Web前端开发工程师-上海</option>
+                    <option data-regularId='8988' >机器学习／数据挖掘算法工程师-上海</option>
+                    <option data-regularId='8950' >后台开发工程师—北京</option>
+                    <option data-regularId='8968' >Android开发工程师-上海</option>
+                    <option data-regularId='8954' data-interestGroupId='14' >后台开发工程师-深圳</option>
+                    <option data-regularId='8986' data-interestGroupId='5' >自然语言处理开发工程师-上海</option>
+                    <option data-regularId='8963' >iOS开发工程师-上海</option>
+                    <option data-regularId='8981' >测试开发工程师-上海</option>
+                    <option data-regularId='8985' >自然语言处理开发工程师-北京</option>
+                    <option data-regularId='8970' data-interestGroupId='1' >Android开发工程师-成都</option>
+                    <option data-regularId='8953' data-interestGroupId='1' >后台开发工程师-成都</option>
+                    <option data-regularId='8983' data-interestGroupId='1' >测试开发工程师-成都</option>
+                    <option data-regularId='8960' data-interestGroupId='1' >Web前端开发工程师-成都</option>
+                    <option data-regularId='8965' data-interestGroupId='1' >iOS开发工程师-成都</option>
+                    <option data-regularId='8974' data-interestGroupId='5' >安全工程师-上海,北京</option>
+
+                    <!-- 产品策划 -->
+                    <option data-regularId='9011' data-interestGroupId='12' >助理产品经理—厦门</option>
+                    <option data-regularId='8989' >助理产品经理-北京</option>
+                    <option data-regularId='8990' >助理产品经理-上海</option>
+
+                    <!-- 运营 -->
+                    <option data-regularId='8992' >产品运营专员-北京</option>
+                    <option data-regularId='8994' data-interestGroupId='12' >产品运营专员-厦门</option>
+                    <option data-regularId='8993' >产品运营专员-上海</option>
+
+                    <!-- 设计 -->
+                    <option data-regularId='9003' >视觉设计师-上海,北京</option>
+                    <option data-regularId='9002' >营销设计师-上海,北京</option>
+                    <option data-regularId='9001' >交互设计师-上海,北京</option>
+                    <option data-regularId='8997' data-interestGroupId='7' >用户研究员-北京</option>
+
+                    <!-- 商业分析 -->
+                    <option data-regularId='9007' >商业分析专员-上海</option>
+                    <option data-regularId='8995' >商业分析专员-北京</option>
+
+                    <!-- 其他 -->
+                </select>
+            </div>
+
+            <!-- 事业群 -->
+            <div class="inputDiv hide">
+                <div class="iconDiv">
+                    <img class="icon" src="./icon/group.png">
+                </div>
+                <div class="gap"></div>
+                <select class="J_Group" placeholder="推荐事业群" name="interestGroupId">
+                    <option value="0">都喜欢</option>
+                <!--
+                    <option class="groupDefault" value="0">推荐事业群</option>
+                    <option value="0">都喜欢</option>
+                    <option value="1">餐饮生态平台</option>
+                    <option value="3">点评平台</option>
+                    <option value="4">广告平台</option>
+                    <option value="5">技术工程及基础数据平台</option>
+                    <option value="6">金融服务平台</option>
+                    <option value="7">美团平台及酒旅事业群</option>
+                    <option value="8">客服平台部</option>    // 展示没看见有客服平台，这个value待确认
+                    <option value="12">企业平台</option>
+                    <option value="13">外卖配送事业群</option>
+                    <option value="14">综合事业群</option>
+                -->
+                </select>
+            </div>
+        </div>
+        <div class="errorMessage hide J_error"></div>
+        <div class="outer">
+            <a href="javascript:;" type="submit" class="btn-next J_submit">提交</a>
+        </div>
+        <p class="tips">如果遇到任何问题，可以加<span class="qq">QQ群：324916338</span></p>
+    </form>
+
+    <!-- 提交成功展示页 -->
+    <div class="recom-success hide"><!-- hide -->
+        <div class="recom-tip">
+            <div class="recom-img recom-successImg"></div>
+            <span>信息提交成功<!-- ，只差最后一步！ --></span>
+            <p>我们将在三个工作日内进行内推，敬请留意后续短信、邮件通知。</p>
+            <p class="tips">如果遇到任何问题，可以加<span class="qq">QQ群：324916338</span></p>
+            <!--
+                <p>请将文章<a href="http://dwz.cn/5lGZ7N">《内推 | 美团点评·2017年春季校招》(可点击)</a>分享到微信群或朋友圈，并截图回复给公众号，即可收到内推邮件与短信</p>
+            -->
         </div>
     </div>
-    <div class="errorMessage hide J_error"></div>
-    <div class="outer">
-        <a href="javascript:;" type="submit" class="btn-next J_submit">提交</a>
-    </div>
-</form>
-<div class="recom-success hide"><!-- hide -->
-    <div class="recom-tip">
-        <div class="recom-img recom-successImg"></div>
-        <span>信息提交成功<!-- ，只差最后一步！ --></span>
-        <p>我们将在三个工作日内进行内推，敬请留意后续短信、邮件通知。</p>
-        <!--
-            <p>请将文章<a href="http://dwz.cn/5lGZ7N">《内推 | 美团点评·2017年春季校招》(可点击)</a>分享到微信群或朋友圈，并截图回复给公众号，即可收到内推邮件与短信</p>
-        -->
-    </div>
-</div>
 
-<script type="text/javascript" src="./js/lib/zepto.js"></script> <!-- 优化: requipre npm module -->
-<script type="text/javascript" src="./js/lib/toast.js"></script>
-<script type="text/javascript" src="./js/form.js"></script>
+
+    <script type="text/javascript" src="./js/lib/zepto.js"></script> <!-- 优化: requipre npm module 或者 import-->
+    <script type="text/javascript" src="./js/lib/toast.js"></script>
+    <script type="text/javascript" src="./js/form.js"></script>
 
 </body>
 </html>
