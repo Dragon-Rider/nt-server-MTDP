@@ -1,24 +1,28 @@
 {
-    "name": "nodejs-getting-started",
-    "description": "getting started with nodejs on sinacloud platform",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "node index.js",
-        "start": "nohub node index.js &"
-    },
-    "author": {
-        "name": "jianghuan",
-        "email": "jianghuan03@meituan.com"
-    },
-    "dependencies": {
-        "body-parser": "^1.15.2",
-        "ejs": "^2.5.1",
-        "express": "^4.13.3",
-        "formidable": "^1.0.17",
-        "mysql": "^2.9.0",
-        "serve-favicon": "^2.3.0"
-    },
-    "engines": {
-        "node": "5.9.0"
-    }
+  "name": "nt-server-mos",
+  "description": "美团校招内推服务端",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "nohub node index.js &"
+  },
+  "author": {
+    "name": "jianghuan",
+    "email": "jianghuan03@meituan.com"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.1",
+    "express": "^4.13.3",
+    "formidable": "^1.0.17",
+    "mysql": "^2.9.0",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "clipboard": "^1.7.1",
+    "zepto": "^1.2.0"
+  },
+  "engines": {
+    "node": "5.9.0"
+  }
 }

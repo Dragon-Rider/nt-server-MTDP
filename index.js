@@ -1,4 +1,4 @@
-var mysql   = require('mysql'),  // 优化：可以换成import，引入babel
+var mysql   = require('mysql'),  // 优化：可以换成import，引入babel， ajax，routes，都收入src文件夹
     express = require('express'),
     Email   = require("./routes/email.js"),
     bodyParser = require('body-parser'),
