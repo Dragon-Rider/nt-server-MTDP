@@ -1,6 +1,6 @@
 {
   "name": "nt-server-mos",
-  "description": "美团校招内推服务端",
+  "description": "美团校招内推服务端代码仓库",
   "version": "0.1.0",
   "scripts": {
     "dev": "node index.js",
