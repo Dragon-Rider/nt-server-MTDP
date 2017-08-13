@@ -8,17 +8,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-title" content="新美大">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>数据展示页面</title>
-    <link href="./css/datadisplay.css" rel="stylesheet" type="text/css" /> 
-    <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?96a80b5772784cbe3bca54c938729a56";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
+    <title>简历展示页面</title>
+    <link href="./css/datadisplay.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <h1>total:<%= data.length %></h1>
@@ -26,11 +17,11 @@
         <% for(var i=0; i<data.length; i++) {%>
             <tr>
                 <td><%= data[i].name %></td>
-                <td><%= data[i].school %></td>
                 <td><%= data[i].email %></td>
                 <td><%= data[i].phone %></td>
                 <td><%= data[i].interestGroupId %></td>
                 <td><%= data[i].jobId %></td>
+                <td><%= data[i].areaCode %></td>
             </tr>
         <% } %>
     </table>
