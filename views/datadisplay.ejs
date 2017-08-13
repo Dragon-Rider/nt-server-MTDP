@@ -12,8 +12,16 @@
     <link href="./css/datadisplay.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1>total:<%= data.length %></h1>
+    <h1>已收到简历数目:<%= data.length %></h1>
     <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>被推荐人名字</th>
+            <th>邮箱</th>
+            <th>电话</th>
+            <th>意向事业群</th>
+            <th>意向岗位</th>
+            <th>手机号所在地区</th>
+        </tr>
         <% for(var i=0; i<data.length; i++) {%>
             <tr>
                 <td><%= data[i].name %></td>
