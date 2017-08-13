@@ -148,12 +148,12 @@ app.get('/', function (req, res) {
     res.render("mainpage.ejs",{'data': req.headers});
 });
 
-//数据发送页面
-app.get('/mydatabase', function (req, res) {
+// 数据发送页面
+app.get('/mydatabase', function (req, res) {   //优化， 收入ajax端口
     // 连接共享型MySQL
     var connection = createConnectSql();
 
-    var selectSQL = "SELECT `name` ,  `interestGroupId` ,  `jobId` ,  `email` ,  `phone` FROM `neitui100` WHERE 1";
+    var selectSQL = "SELECT `name` ,  `interestGroupId` ,  `jobId` ,  `email` ,  `phone` ,  `areaCode` FROM `neitui100` WHERE 1";
 
     connection.query(selectSQL, function(err, rows) {
         if (err) {
@@ -215,4 +215,5 @@ app.post('/upload', function(req, res){
         return;
     }
 });
+
 app.listen(80);  // 优化：这里把端口换成80，加https证书
