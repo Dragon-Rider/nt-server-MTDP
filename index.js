@@ -153,7 +153,7 @@ app.get('/mydatabase', function (req, res) {   // 优化， 收入ajax端口
     // 连接共享型MySQL
     var connection = createConnectSql();
 
-    var selectSQL = "SELECT `name` ,  `interestGroupId` ,  `jobId` ,  `email` ,  `areaCode` ,  `areaCode` FROM `neitui100` WHERE 1";
+    var selectSQL = "SELECT `name` ,  `interestGroupId` ,  `jobId` ,  `email` ,  `phone` ,  `areaCode` FROM `neitui100` WHERE 1";
 
     connection.query(selectSQL, function(err, rows) {
         if (err) {
