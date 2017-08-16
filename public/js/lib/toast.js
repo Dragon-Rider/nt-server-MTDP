@@ -3,10 +3,10 @@
 */
 function Toast(content, callback, time, topPercentage, showMask) {
 
-    let text = content || '已完成';
-    let displayTime = time || 2000;
-    let top = topPercentage || 45;
-    let toast = $('<div class="J_toast"></div>');
+    var text = content || '已完成';
+    var displayTime = time || 2000;
+    var top = topPercentage || 45;
+    var toast = $('<div class="J_toast"></div>');
 
     toast.html(text);
     toast.css({
@@ -30,7 +30,7 @@ function Toast(content, callback, time, topPercentage, showMask) {
     });
     if($('.J_toast').length == 0){
         if(showMask) {
-            let mask = $('<div class="J_toast_mask"></div>');
+            var mask = $('<div class="J_toast_mask"></div>');
             mask.css({
                 'z-index': 998,
                 'position': 'fixed',
@@ -54,6 +54,5 @@ function Toast(content, callback, time, topPercentage, showMask) {
             callback && callback();
         }, displayTime);
     }
-
 }
 
