@@ -1,6 +1,3 @@
-
-/*
-*/
 function Toast(content, callback, time, topPercentage, showMask) {
 
     var text = content || '已完成';
