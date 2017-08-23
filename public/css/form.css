@@ -162,4 +162,7 @@ h1 {
     font-size: 17px;
 }
 
-
+.logo {
+    margin: 20px auto 0;
+    width: 120px;
+}
